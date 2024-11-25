@@ -4,14 +4,15 @@ import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Homepage from './routes/Homepage.jsx';
 import App from './App.jsx';
+import MainLayout from './layouts/MainLayout.jsx';
 
 const router = createBrowserRouter([
     {
-        // element: <MainLayout />,
+        element: <MainLayout />,
         children: [
             {
                 path: '/',
-                element: <App />,
+                element: <Homepage />,
             },
         ],
     },
