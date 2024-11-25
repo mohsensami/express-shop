@@ -11,10 +11,15 @@
   },
   "dependencies": {
     "@clerk/clerk-react": "^5.17.0",
+    "@tanstack/react-query": "^5.61.3",
+    "axios": "^1.7.7",
     "imagekitio-react": "^4.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^7.0.0"
+    "react-infinite-scroll-component": "^6.1.0",
+    "react-router-dom": "^7.0.0",
+    "react-toastify": "^10.0.6",
+    "timeago.js": "^4.0.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
