@@ -2,7 +2,7 @@ import { Link, useParams } from 'react-router-dom';
 import Image from '../components/Image';
 // import PostMenuActions from '../components/PostMenuActions';
 import Search from '../components/Search';
-// import Comments from '../components/Comments';
+import Comments from '../components/Comments';
 import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
 import { format } from 'timeago.js';
