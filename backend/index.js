@@ -1,10 +1,12 @@
 import express from 'express';
-// import userRouter from './routes/user.route.js';
+import userRouter from './routes/user.route.js';
+import postRouter from './routes/post.route.js';
 import connectDB from './lib/connectDB.js';
 
 const app = express();
 
-// app.use('/users', userRouter);
+app.use('/users', userRouter);
+app.use('/posts', postRouter);
 
 app.listen(3000, () => {
     connectDB();
