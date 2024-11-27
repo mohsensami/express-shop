@@ -15,3 +15,8 @@ export const createPost = async (req, res) => {
     const post = await newPost.save();
     res.status(200).send(post);
 };
+
+export const deletePost = async (req, res) => {
+    const post = await Post.findById(req.params.id);
+    res.status(200).send('Post has been deleted');
+};
