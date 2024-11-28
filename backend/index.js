@@ -1,6 +1,7 @@
 import express from 'express';
 import userRouter from './routes/user.route.js';
 import postRouter from './routes/post.route.js';
+import webhookRouter from './routes/webhook.route.js';
 import connectDB from './lib/connectDB.js';
 
 const app = express();
@@ -8,6 +9,7 @@ app.use(express.json());
 
 app.use('/users', userRouter);
 app.use('/posts', postRouter);
+app.use('/webhooks', webhookRouter);
 
 app.use((error, req, res, next) => {
     res.status(error.status || 500);
