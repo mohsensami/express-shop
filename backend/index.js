@@ -9,7 +9,7 @@ app.use(express.json());
 
 app.use('/users', userRouter);
 app.use('/posts', postRouter);
-app.use('/webhooks', webhookRouter);
+// app.use('/webhooks', webhookRouter);
 
 app.use((error, req, res, next) => {
     res.status(error.status || 500);
