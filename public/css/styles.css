@@ -1,3 +1,154 @@
+/* @font-face {
+    font-family: 'Vazir-FD';
+    src: url('../fonts/Vazir-FD.woff');
+} */
+
 body {
-    color: blue;
+    margin: 0 auto;
+    font-family: 'Lato', sans-serif;
+    /* font-family: 'Vazir-FD';
+    direction: rtl; */
+}
+
+.top-menu {
+    width: 100%;
+    min-height: 3em;
+    background: #1565c0;
+}
+
+.top-menu ul {
+    list-style: none;
+    padding-top: 0.8em;
+}
+
+.top-menu li {
+    display: inline;
+    padding: 0.8em;
+}
+
+.top-menu a {
+    text-decoration: none;
+    color: #bbdefb;
+    transition: 0.3s all;
+}
+
+.top-menu a:hover {
+    color: #fff;
+    transition: 0.3s all;
+}
+
+.page-title {
+    color: #1565c0;
+}
+
+.content {
+    margin: 0 2em;
+}
+
+.add-product-form input {
+    width: 200px;
+    height: 25px;
+    border: 1px solid #1565c0;
+    outline: none;
+}
+
+.add-product-form button {
+    width: 100px;
+    height: 25px;
+    background: #fff;
+    border: 1px solid #1565c0;
+    color: #1565c0;
+    font-size: 12px;
+    transition: 0.3s all;
+}
+
+.add-product-form button:hover {
+    background: #1565c0;
+    border: 1px solid #1565c0;
+    color: #fff;
+    transition: 0.3s all;
+}
+
+.product-info {
+    float: right;
+    text-align: center;
+    background: #fff;
+    margin: 25px 15px;
+    border: 1px solid #bbdefb;
+}
+
+.product-image {
+    margin: 0;
+}
+
+.product-info h2 {
+    font-size: 1.2em;
+}
+
+.product-description {
+    color: #616161;
+    font-size: 0.9em;
+}
+
+.product-price {
+    color: #388e3c;
+}
+
+.add-to-cart-btn {
+    width: 120px;
+    height: 35px;
+    background: #fff;
+    border: 1px solid #1565c0;
+    color: #1565c0;
+    font-size: 12px;
+    transition: 0.3s all;
+    margin: 1.2em;
+}
+
+.add-to-cart-btn:hover {
+    background: #1565c0;
+    border: 1px solid #1565c0;
+    color: #fff;
+    transition: 0.3s all;
+}
+
+.form-control {
+    display: inline-flex;
+}
+
+.edit-btn {
+    text-decoration: none;
+    color: #1365c0;
+    font-size: 1em;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #e53935;
+    font-size: 0.8em;
+}
+
+.detail-btn {
+    text-decoration: none;
+    color: #1365c0;
+    font-size: 1em;
+}
+
+.logout-form {
+    display: inline;
+}
+
+.logout-form button {
+    background: none;
+    border: none;
+    color: #bbdefb;
+    transition: 0.3s all;
+    font-size: 1em;
+    font-family: 'Vazir-FD';
+}
+
+.logout-form button:hover {
+    color: #fff;
+    transition: 0.3s all;
 }
