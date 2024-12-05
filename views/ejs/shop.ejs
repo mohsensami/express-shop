@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('includes/header.ejs') %>
+    <main>
+        <h1>Shop</h1>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles.css">
-    <title>Shop</title>
-</head>
-
-<body>
-    <h1>Shop</h1>
-    <div>
         <% if (productsArray.length> 0) { %>
             <% for (let counter of productsArray) { %>
                 <div>Name: <%= counter.title %>
@@ -20,6 +11,5 @@
                         <p>Not exists</p>
                         <% } %>
                             </>
-</body>
-
-</html>
+    </main>
+    <%- include('includes/footer.ejs') %>
