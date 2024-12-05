@@ -10,6 +10,16 @@
 
 <body>
     <h1>Shop</h1>
+    <div>
+        <% if (productsArray.length> 0) { %>
+            <% for (let counter of productsArray) { %>
+                <div>Name: <%= counter.title %>
+                </div>
+                <% } %>
+                    <% } else { %>
+                        <p>Not exists</p>
+                        <% } %>
+                            </>
 </body>
 
 </html>
