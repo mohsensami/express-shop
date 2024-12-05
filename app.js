@@ -1,9 +1,11 @@
 const express = require('express');
 
+const adminRoutes = require('./routes/admin');
+const shopRoutes = require('./routes/shop');
+
 const app = express();
 
-app.get('/', (req, res) => {
-    res.send('Hello');
-});
+app.use(adminRoutes);
+app.use(shopRoutes);
 
-app.listen(3000)
+app.listen(3000);
