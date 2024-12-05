@@ -8,4 +8,8 @@ const app = express();
 app.use(adminRoutes);
 app.use(shopRoutes);
 
+app.use((req, res) => {
+    res.status(404).send('Page Not Found!');
+});
+
 app.listen(3000);
