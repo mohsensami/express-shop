@@ -13,9 +13,10 @@ module.exports.sendAllProducts = (req, res) => {
 };
 
 module.exports.getAllProducts = (req, res) => {
-    const products = Product.fetchAllProducts();
-    res.render('shop', {
-        pageTitle: 'Shop',
-        productsArray: products,
+    Product.fetchAllProducts((products) => {
+        res.render('shop', {
+            pageTitle: 'Shop',
+            productsArray: products,
+        });
     });
 };
