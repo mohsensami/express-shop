@@ -11,12 +11,3 @@ module.exports.sendAllProducts = (req, res) => {
     products.saveProductData();
     res.redirect('/');
 };
-
-module.exports.getAllProducts = (req, res) => {
-    Product.fetchAllProducts((products) => {
-        res.render('shop/product-list', {
-            pageTitle: 'Shop',
-            productsArray: products,
-        });
-    });
-};
