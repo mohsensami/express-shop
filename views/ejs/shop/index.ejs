@@ -1,9 +1,21 @@
 <%- include('../includes/header.ejs') %>
-    <main class="content">
-        <h1 class="page-title">
+    <main>
+        <h1>
             <%= pageTitle %>
         </h1>
 
-
+        <% if (productsArray.length> 0) { %>
+            <% for (let counter of productsArray) { %>
+                <p>Name: <%= counter.title %>
+                </p>
+                <p>Description: <%= counter.description %>
+                </p>
+                <p>Price: <%= counter.price %>
+                </p>
+                <% } %>
+                    <% } else { %>
+                        <p>Not exists</p>
+                        <% } %>
+                            </>
     </main>
     <%- include('../includes/footer.ejs') %>
