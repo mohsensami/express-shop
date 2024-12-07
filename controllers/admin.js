@@ -11,3 +11,12 @@ module.exports.sendAllProducts = (req, res) => {
     products.saveProductData();
     res.redirect('/');
 };
+
+module.exports.getProducts = (req, res) => {
+    Product.fetchAllProducts((products) => {
+        res.render('admin/products', {
+            pageTitle: 'Admin Products',
+            productsArray: products,
+        });
+    });
+};
