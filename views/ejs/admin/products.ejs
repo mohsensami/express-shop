@@ -1,9 +1,45 @@
 <%- include('../includes/header.ejs') %>
-    <main class="content">
+    <main class="container">
         <h1 class="page-title">
             <%= pageTitle %>
         </h1>
 
+        <div class="table-responsive small">
+            <table class="table table-striped table-sm">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (productsArray.length> 0) { %>
+                        <% for (let product of productsArray) { %>
+                            <tr>
+                                <td>1</td>
+                                <td>
+                                    <%= product.title %>
+                                </td>
+                                <td>
+                                    <%= product.price %>
+                                </td>
+                                <td>
+                                    <a href="/admin/edit-admin">Edit</a>
+                                    <form method="post" action="/admin/delete-product">
+                                        <button type="submit">Delete</>
+                                    </form>
+                                </td>
+                            </tr>
+                            <% } %>
+                                <% } else { %>
+                                    <p>Not exists</p>
+                                    <% } %>
+
+                </tbody>
+            </table>
+        </div>
 
     </main>
     <%- include('../includes/footer.ejs') %>

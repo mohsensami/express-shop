@@ -1,21 +1,42 @@
 <%- include('../includes/header.ejs') %>
     <main>
-        <h1>
-            <%= pageTitle %>
-        </h1>
+        <div>
+            <h1 class="text-center">
+                <%= pageTitle %>
+            </h1>
+        </div>
+        <div class="container">
 
-        <% if (productsArray.length> 0) { %>
-            <% for (let counter of productsArray) { %>
-                <p>Name: <%= counter.title %>
-                </p>
-                <p>Description: <%= counter.description %>
-                </p>
-                <p>Price: <%= counter.price %>
-                </p>
-                <% } %>
-                    <% } else { %>
-                        <p>Not exists</p>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <% if (productsArray.length> 0) { %>
+                    <% for (let product of productsArray) { %>
+                        <div>
+                            <div class="col">
+                                <div class="card mb-4 rounded-3 shadow-sm">
+                                    <div class="card-header py-3">
+                                        <h4 class="my-0 fw-normal">
+                                            <%= product.title %>
+                                        </h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <h1 class="card-title pricing-card-title">$<%= product.price %>
+                                        </h1>
+                                        <div>
+                                            <p>
+                                                <%= product.description %>
+                                            </p>
+                                        </div>
+                                        <button type="button" class="w-100 btn btn-lg btn-primary">Buy</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <% } %>
-                            </>
+                            <% } else { %>
+                                <p>Not exists</p>
+                                <% } %>
+                                    </>
+            </div>
+        </div>
     </main>
     <%- include('../includes/footer.ejs') %>

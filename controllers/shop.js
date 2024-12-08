@@ -24,6 +24,12 @@ module.exports.getCart = (req, res) => {
     });
 };
 
+module.exports.getOrders = (req, res) => {
+    res.render('shop/orders', {
+        pageTitle: 'Orders',
+    });
+};
+
 module.exports.getCheckout = (req, res) => {
     res.render('shop/checkout', {
         pageTitle: 'Checkout',
