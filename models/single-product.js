@@ -19,7 +19,7 @@ module.exports = class Product {
         this.price = price;
     }
     saveProductData() {
-        this.id = Math.floor(Math.random()) * 10;
+        this.id = Math.floor(Math.random() * 10);
         getProductsFromFile((products) => {
             products.push(this);
             fs.writeFile(filePath, JSON.stringify(products), (err) => {
@@ -29,5 +29,14 @@ module.exports = class Product {
     }
     static fetchAllProducts(cb) {
         getProductsFromFile(cb);
+    }
+
+    static fetchOneProduct(id, cb) {
+        getProductsFromFile((products) => {
+            const oneProduct = products.find((p) => {
+                return p.id == id;
+            });
+            cb(oneProduct);
+        });
     }
 };

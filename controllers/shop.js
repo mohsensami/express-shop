@@ -11,8 +11,12 @@ module.exports.getAllProducts = (req, res) => {
 
 module.exports.getOneProduct = (req, res) => {
     const pId = req.params.productId;
-    console.log(pId);
-    res.redirect('/');
+    Product.fetchOneProduct(pId, (product) => {
+        res.render('shop/product-detail', {
+            product: product,
+            // pageTitle: product.title,
+        });
+    });
 };
 
 module.exports.getIndex = (req, res) => {
