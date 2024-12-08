@@ -9,6 +9,12 @@ module.exports.getAllProducts = (req, res) => {
     });
 };
 
+module.exports.getOneProduct = (req, res) => {
+    const pId = req.params.productId;
+    console.log(pId);
+    res.redirect('/');
+};
+
 module.exports.getIndex = (req, res) => {
     Product.fetchAllProducts((products) => {
         res.render('shop/index', {

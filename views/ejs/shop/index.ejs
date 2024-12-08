@@ -26,10 +26,12 @@
                                                 <%= product.description %>
                                             </p>
                                         </div>
-                                        <form method="post" action="">
-
-                                            <button type="button" class="w-100 btn btn-lg btn-primary">Add to Cart</button>
-                                        </form>
+                                        <div class=" ">
+                                            <form method="post" action="">
+                                                <button type="button" class="w-100 btn btn-lg btn-primary">Add to Cart</button>
+                                            </form>
+                                            <a href="/products/<%= product.id %>" class="w-100 btn btn-lg btn-primary">Details</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -38,7 +40,7 @@
                             <% } else { %>
                                 <p>Not exists</p>
                                 <% } %>
-                                    
+
             </div>
         </div>
     </main>
