@@ -34,6 +34,10 @@ module.exports.getCart = (req, res) => {
     });
 };
 
+module.exports.postCart = (req, res) => {
+    const pId = req.body.productId;
+};
+
 module.exports.getOrders = (req, res) => {
     res.render('shop/orders', {
         pageTitle: 'Orders',

@@ -13,12 +13,7 @@
                             <use xlink:href="#chevron-right"></use>
                         </svg>
                     </a>
-                    <a class="icon-link" href="#">
-                        Buy
-                        <svg class="bi">
-                            <use xlink:href="#chevron-right"></use>
-                        </svg>
-                    </a>
+                    <%- include('../includes/add-to-cart.ejs', {product: product}) %>
                 </div>
             </div>
             <div class="product-device shadow-sm d-none d-md-block"></div>

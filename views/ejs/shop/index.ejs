@@ -27,11 +27,9 @@
                                             </p>
                                         </div>
                                         <div class=" ">
-                                            <form method="post" action="">
-                                                <button type="button" class="w-100 btn btn-lg btn-primary">Add to Cart</button>
-                                            </form>
-                                            <a href="/products/<%= product.id %>" class="w-100 btn btn-lg btn-primary">Details</a>
+                                            <%- include('../includes/add-to-cart.ejs', {product: product}) %>
                                         </div>
+                                        <a href="/products/<%= product.id %>" class="w-100 btn btn-lg btn-primary">Details</a>
                                     </div>
                                 </div>
                             </div>
