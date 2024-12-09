@@ -23,3 +23,9 @@ module.exports.getProducts = (req, res) => {
         });
     });
 };
+
+module.exports.deleteProduct = (req, res) => {
+    const pId = req.body.productId;
+    Product.deleteProductData(pId);
+    res.redirect('/admin/products');
+};
