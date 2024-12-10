@@ -20,17 +20,21 @@ module.exports.sendAllProducts = (req, res) => {
         .catch((err) => console.log(err));
 };
 
-// module.exports.getProducts = (req, res) => {
-//     Product.fetchAllProducts((products) => {
-//         res.render('admin/products', {
-//             pageTitle: 'Admin Products',
-//             productsArray: products,
-//         });
-//     });
-// };
+module.exports.getProducts = (req, res) => {
+    Product.fetchAllProducts().then((products) => {
+        res.render('admin/products', {
+            pageTitle: 'Admin Products',
+            productsArray: products,
+        });
+    });
+};
 
-// module.exports.deleteProduct = (req, res) => {
-//     const pId = req.body.productId;
-//     Product.deleteProductData(pId);
-//     res.redirect('/admin/products');
-// };
+module.exports.deleteProduct = (req, res) => {
+    const pId = req.body.productId;
+    Product.deleteOneProduct(pId)
+        .then(() => {
+            console.log('Product Deleted');
+            res.redirect('/admin/products');
+        })
+        .catch((err) => console.log(err));
+};
