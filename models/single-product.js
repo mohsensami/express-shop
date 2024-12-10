@@ -35,6 +35,21 @@ class Product {
                 console.log(err);
             });
     }
+
+    static fetchOneProduct(pId) {
+        const db = getDB();
+        return db
+            .collection('product')
+            .find({ _id: new mongodb.ObjectId(pId) })
+            .next()
+            .then((product) => {
+                console.log(product);
+                return product;
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }
 }
 
 module.exports = Product;

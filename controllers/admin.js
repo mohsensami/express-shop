@@ -15,7 +15,7 @@ module.exports.sendAllProducts = (req, res) => {
         .saveProductData()
         .then((result) => {
             console.log('Product Created');
-            res.redirect('admin/add-product');
+            res.redirect('add-product');
         })
         .catch((err) => console.log(err));
 };
