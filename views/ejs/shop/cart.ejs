@@ -1,9 +1,16 @@
 <%- include('../includes/header.ejs') %>
     <main class="content">
-        <h1 class="page-title">
-            <%= pageTitle %>
-        </h1>
-
-
+        <h1 class="page-title">سبد خرید</h1>
+        <% if (products.length> 0) { %>
+            <ul>
+                <% products.forEach(p=> { %>
+                    <li>
+                        <%= p.title %>
+                    </li>
+                    <% }) %>
+            </ul>
+            <% } else { %>
+                <p>سبد خرید خالی است</p>
+                <% } %>
     </main>
     <%- include('../includes/footer.ejs') %>

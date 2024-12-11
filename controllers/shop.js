@@ -30,19 +30,31 @@ module.exports.getIndex = (req, res) => {
     });
 };
 
-// module.exports.getCart = (req, res) => {
-//     res.render('shop/cart', {
-//         pageTitle: 'Cart',
-//     });
-// };
+module.exports.getCart = (req, res) => {
+    req.user
+        .getCart()
+        .then((products) => {
+            res.render('shop/cart', {
+                pageTitle: 'سبد خرید',
+                products: products,
+            });
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+};
 
-// module.exports.postCart = (req, res) => {
-//     const pId = req.body.productId;
-//     Product.fetchOneProduct(pId, (product) => {
-//         Cart.addProduct(pId, product.price);
-//     });
-//     res.redirect('/cart');
-// };
+module.exports.postCart = (req, res) => {
+    const pId = req.body.productId;
+    Product.fetchOneProduct(pId)
+        .then((product) => {
+            return req.user.addToCart(product);
+        })
+        .then((result) => {
+            console.log(result);
+            res.redirect('/cart');
+        });
+};
 
 // module.exports.getOrders = (req, res) => {
 //     res.render('shop/orders', {
