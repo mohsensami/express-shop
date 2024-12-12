@@ -1,91 +1,162 @@
 <%- include('../includes/header.ejs') %>
-    <main class="">
-        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
-            <div class="col-md-6 p-lg-5 mx-auto my-5">
-                <h1 class="display-3 fw-bold">
-                    <%= product.title %>
-                </h1>
-                <h3 class="fw-normal text-muted mb-3">Build anything you want with Aperture</h3>
-                <div class="d-flex gap-3 justify-content-center lead fw-normal">
-                    <a class="icon-link" href="#">
-                        Learn more
-                        <svg class="bi">
-                            <use xlink:href="#chevron-right"></use>
-                        </svg>
-                    </a>
-                    <%- include('../includes/add-to-cart.ejs', {product: product}) %>
-                </div>
-            </div>
-            <div class="product-device shadow-sm d-none d-md-block"></div>
-            <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
-        </div>
+    <main>
+        <section class="product-details-wrapper pt-70 pb-100">
+            <div class="container">
+                <div class="product-details-style-2">
+                    <div class="product-details-content text-center">
+                        <h2 class="title">
+                            <%= product.title %>
+                        </h2>
+                        <p class="sub-title">
+                            <%= product.description %>
+                        </p>
+                    </div>
 
-        <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-            <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-                <div class="my-3 py-3">
-                    <h2 class="display-5">Another headline</h2>
-                    <p class="lead">And an even wittier subheading.</p>
-                </div>
-                <div class="bg-body-tertiary shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-            </div>
-            <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-                <div class="my-3 p-3">
-                    <h2 class="display-5">Another headline</h2>
-                    <p class="lead">And an even wittier subheading.</p>
-                </div>
-                <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-            </div>
-        </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="product-details-image pt-50">
+                                <div class="product-image">
+                                    <div class="product-image-active tab-content" id="v-pills-tabContent-2">
+                                        <div class="single-image tab-pane fade show active" id="v-pills-6" role="tabpanel" aria-labelledby="v-pills-6-tab">
+                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/product-1.jpg" alt="">
+                                        </div>
+                                        <div class="single-image tab-pane fade" id="v-pills-7" role="tabpanel" aria-labelledby="v-pills-7-tab">
+                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/product-2.jpg" alt="">
+                                        </div>
+                                        <div class="single-image tab-pane fade" id="v-pills-8" role="tabpanel" aria-labelledby="v-pills-8-tab">
+                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/product-3.jpg" alt="">
+                                        </div>
+                                        <div class="single-image tab-pane fade" id="v-pills-9" role="tabpanel" aria-labelledby="v-pills-9-tab">
+                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/product-4.jpg" alt="">
+                                        </div>
+                                        <div class="single-image tab-pane fade" id="v-pills-10" role="tabpanel" aria-labelledby="v-pills-10-tab">
+                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/product-5.jpg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-thumb-image">
+                                    <div class="product-thumb-image-active nav nav-pills" id="v-pills-tab-2" role="tablist" aria-orientation="vertical">
+                                        <div class="single-thumb active" id="v-pills-6-tab" data-bs-toggle="pill" href="#v-pills-6" role="tab" aria-controls="v-pills-6" aria-selected="true">
+                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/thunb-1.jpg" alt="">
+                                        </div>
+                                        <div class="single-thumb" id="v-pills-7-tab" data-bs-toggle="pill" href="#v-pills-7" role="tab" aria-controls="v-pills-7" aria-selected="false">
+                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/thunb-2.jpg" alt="">
+                                        </div>
+                                        <div class="single-thumb" id="v-pills-8-tab" data-bs-toggle="pill" href="#v-pills-8" role="tab" aria-controls="v-pills-8" aria-selected="false">
+                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/thunb-3.jpg" alt="">
+                                        </div>
+                                        <div class="single-thumb" id="v-pills-9-tab" data-bs-toggle="pill" href="#v-pills-9" role="tab" aria-controls="v-pills-9" aria-selected="false">
+                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/thunb-4.jpg" alt="">
+                                        </div>
+                                        <div class="single-thumb" id="v-pills-10-tab" data-bs-toggle="pill" href="#v-pills-10" role="tab" aria-controls="v-pills-10" aria-selected="false">
+                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/thunb-5.jpg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="product-details-content mt-45">
+                                <div class="product-items flex-wrap">
+                                    <h6 class="item-title">Select Your Oculus:</h6>
+                                    <div class="items-wrapper" id="select-item-2">
+                                        <div class="single-item active">
+                                            <div class="items-image">
+                                                <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/product-items-1.jpg" alt="product">
+                                            </div>
+                                        </div>
+                                        <div class="single-item">
+                                            <div class="items-image">
+                                                <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/product-items-2.jpg" alt="product">
+                                            </div>
+                                        </div>
+                                        <div class="single-item">
+                                            <div class="items-image">
+                                                <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/product-items-3.jpg" alt="product">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-        <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-            <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-                <div class="my-3 p-3">
-                    <h2 class="display-5">Another headline</h2>
-                    <p class="lead">And an even wittier subheading.</p>
-                </div>
-                <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-            </div>
-            <div class="text-bg-primary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-                <div class="my-3 py-3">
-                    <h2 class="display-5">Another headline</h2>
-                    <p class="lead">And an even wittier subheading.</p>
-                </div>
-                <div class="bg-body-tertiary shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-            </div>
-        </div>
+                                <div class="product-select-wrapper flex-wrap">
+                                    <div class="select-item">
+                                        <h6 class="select-title">
+                                            Select Color: <span>Grey</span>
+                                        </h6>
+                                        <ul class="color-select" id="select-color-2">
+                                            <li class="active" style="background-color: #efefef"></li>
+                                            <li style="background-color: #fae5ec"></li>
+                                            <li style="background-color: #4c4c4c"></li>
+                                        </ul>
+                                    </div>
+                                </div>
 
-        <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-            <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-                <div class="my-3 p-3">
-                    <h2 class="display-5">Another headline</h2>
-                    <p class="lead">And an even wittier subheading.</p>
-                </div>
-                <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-            </div>
-            <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-                <div class="my-3 py-3">
-                    <h2 class="display-5">Another headline</h2>
-                    <p class="lead">And an even wittier subheading.</p>
-                </div>
-                <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-            </div>
-        </div>
+                                <div class="product-select-wrapper flex-wrap">
+                                    <div class="select-item">
+                                        <h6 class="select-title">Memory (GB):</h6>
+                                        <ul class="size-select" id="size-select-1">
+                                            <li class="active">
+                                                <span>32gb</span>
+                                            </li>
+                                            <li>
+                                                <span>64gb</span>
+                                            </li>
+                                            <li>
+                                                <span>128 gb</span>
+                                            </li>
+                                        </ul>
+                                    </div>
 
-        <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-            <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-                <div class="my-3 p-3">
-                    <h2 class="display-5">Another headline</h2>
-                    <p class="lead">And an even wittier subheading.</p>
+                                    <div class="select-item">
+                                        <h6 class="select-title">Select Quantity:</h6>
+
+                                        <div class="select-quantity">
+                                            <button type="button" id="sub" class="sub">
+                                                <i class="mdi mdi-minus"></i>
+                                            </button>
+                                            <input type="text" value="1">
+                                            <button type="button" id="add" class="add">
+                                                <i class="mdi mdi-plus"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="product-select-wrapper">
+                                    <div class="select-item">
+                                        <h6 class="select-title">
+                                            Select Shipping Country: <span>+ $ 30 USD</span>
+                                        </h6>
+                                        <ul class="country-select" id="country-select-1">
+                                            <li class="active">
+                                                <span>Bangladesh</span>
+                                            </li>
+                                            <li>
+                                                <span>India</span>
+                                            </li>
+                                            <li>
+                                                <span>Australia</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="product-price">
+                                    <h6 class="price-title">Price:</h6>
+                                    <p class="sale-price">$ <%= product.price %> USD</p>
+                                    <!-- <p class="regular-price">$ 179 USD</p> -->
+                                </div>
+
+                                <div class="product-btn">
+                                    <%- include('../includes/add-to-cart.ejs', {product: product}) %>
+                                        <!-- <a href="#0" class="main-btn secondary-1-btn"><img src="assets/images/icon-svg/cart-8.svg" alt=""> Buy
+                                        Now</a> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
             </div>
-            <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-                <div class="my-3 py-3">
-                    <h2 class="display-5">Another headline</h2>
-                    <p class="lead">And an even wittier subheading.</p>
-                </div>
-                <div class="bg-body shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-            </div>
-        </div>
+        </section>
     </main>
     <%- include('../includes/footer.ejs') %>
