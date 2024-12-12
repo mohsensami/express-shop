@@ -3,7 +3,7 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 // const mongoConnect = require('./util/database').mongodbConnect;
-const mongooe = require('mongoose');
+const mongoose = require('mongoose');
 
 //const User = require('./models/user');
 

@@ -1,4 +1,4 @@
-const Product = require('../models/mongodb/single-product');
+const Product = require('../models/single-product');
 
 module.exports.addProductPage = (req, res) => {
     res.render('admin/add-product', {
@@ -6,13 +6,17 @@ module.exports.addProductPage = (req, res) => {
     });
 };
 
-module.exports.sendAllProducts = (req, res) => {
+module.exports.sendProducts = (req, res) => {
     const title = req.body.title;
     const description = req.body.description;
     const price = req.body.price;
-    const products = new Product(title, description, price, req.user._id);
+    const products = new Product({
+        title: title,
+        description: description,
+        price: price,
+    });
     products
-        .saveProductData()
+        .save()
         .then((result) => {
             console.log('Product Created');
             res.redirect('add-product');
@@ -34,7 +38,7 @@ module.exports.deleteProduct = (req, res) => {
     Product.deleteOneProduct(pId)
         .then(() => {
             console.log('Product Deleted');
-            res.redirect('/admin/products');
+            res.redirect('/add-product');
         })
         .catch((err) => console.log(err));
 };
