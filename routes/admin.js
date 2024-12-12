@@ -10,9 +10,9 @@ router.get('/add-product', adminControllers.addProductPage);
 
 router.post('/add-product', adminControllers.sendProducts);
 
-// router.get('/products', adminControllers.getProducts);
+router.get('/products', adminControllers.getProducts);
 
-// router.post('/delete-product', adminControllers.deleteProduct);
+router.post('/delete-product', adminControllers.deleteProduct);
 
 module.exports = router;
 
