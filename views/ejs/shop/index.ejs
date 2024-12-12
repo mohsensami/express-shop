@@ -7,33 +7,37 @@
         </div>
         <div class="container">
 
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col-lg-4 col-sm-6">
                 <% if (productsArray.length> 0) { %>
                     <% for (let product of productsArray) { %>
-                        <div>
-                            <div class="col">
-                                <div class="card mb-4 rounded-3 shadow-sm">
-                                    <div class="card-header py-3">
-                                        <h4 class="my-0 fw-normal">
-                                            <%= product.title %>
-                                        </h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <h1 class="card-title pricing-card-title">$<%= product.price %>
-                                        </h1>
-                                        <div>
-                                            <p>
-                                                <%= product.description %>
-                                            </p>
-                                        </div>
-                                        <div class=" ">
-                                            <%- include('../includes/add-to-cart.ejs', {product: product}) %>
-                                        </div>
-                                        <a href="/products/<%= product._id %>" class="w-100 btn btn-lg btn-primary">Details</a>
-                                    </div>
+
+
+
+                        <div class="product-style-4 mt-30">
+                            <div class="product-image">
+                                <div class="product-item active">
+                                    <img src="https://demo.ecommercehtml.com/assets/images/product-2/product-1.jpg" alt="product">
+                                </div>
+                                <a class="add-wishlist" href="#0">
+                                    <i class="mdi mdi-heart"></i>
+                                </a>
+                            </div>
+                            <div class="product-content">
+                                <h4 class="title"><a href="/products/<%= product._id %>">
+                                        <%= product.title %>
+                                    </a></h4>
+                                <p>
+                                    <%= product.description %>
+                                </p>
+                                <div class="product-price-cart">
+                                    <span class="price">$ <%= product.price %></span>
+                                    <%- include('../includes/add-to-cart.ejs', {product: product}) %>
+                                    
                                 </div>
                             </div>
                         </div>
+
+
                         <% } %>
                             <% } else { %>
                                 <p>Not exists</p>
