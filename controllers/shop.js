@@ -1,7 +1,7 @@
-const Product = require('../models/mongodb/single-product');
+const Product = require('../models/single-product');
 
 module.exports.getAllProducts = (req, res) => {
-    Product.fetchAllProducts().then((products) => {
+    Product.find().then((products) => {
         res.render('shop/product-list', {
             pageTitle: 'Product List',
             productsArray: products,
@@ -11,7 +11,7 @@ module.exports.getAllProducts = (req, res) => {
 
 module.exports.getOneProduct = (req, res) => {
     const pId = req.params.productId;
-    Product.fetchOneProduct(pId)
+    Product.findById(pId)
         .then((product) => {
             res.render('shop/product-detail', {
                 product: product,
@@ -22,7 +22,7 @@ module.exports.getOneProduct = (req, res) => {
 };
 
 module.exports.getIndex = (req, res) => {
-    Product.fetchAllProducts().then((products) => {
+    Product.find().then((products) => {
         res.render('shop/index', {
             pageTitle: 'Shop',
             productsArray: products,

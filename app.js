@@ -35,7 +35,7 @@ app.use((req, res) => {
 });
 
 mongoose
-    .connect('mongodb://127.0.0.1:27017/Shop', { useNewUrlParser: true })
+    .connect('mongodb://127.0.0.1:27017/Shop', {})
     .then((result) => {
         app.listen(3000);
     })
