@@ -1,4 +1,4 @@
-const Product = require('../models/single-product');
+const Product = require('../models/mongodb/single-product');
 
 module.exports.getAllProducts = (req, res) => {
     Product.fetchAllProducts().then((products) => {

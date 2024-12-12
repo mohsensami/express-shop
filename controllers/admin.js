@@ -1,4 +1,4 @@
-const Product = require('../models/single-product');
+const Product = require('../models/mongodb/single-product');
 
 module.exports.addProductPage = (req, res) => {
     res.render('admin/add-product', {
