@@ -14,6 +14,7 @@ module.exports.sendProducts = (req, res) => {
         title: title,
         description: description,
         price: price,
+        userId: req.user,
     });
     products
         .save()
