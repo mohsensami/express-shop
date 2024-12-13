@@ -1,11 +1,13 @@
 <%- include('../includes/header.ejs') %>
     <main class="content">
-        <h1 class="page-title">سبد خرید</h1>
+        <h1 class="page-title">
+            <%= pageTitle %>
+        </h1>
         <% if (products.length> 0) { %>
             <ul>
                 <% products.forEach(p=> { %>
                     <li>
-                        <%= p.title %>
+                        <%= p.productId.title %>
                     </li>
                     <% }) %>
             </ul>
