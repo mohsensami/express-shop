@@ -1,3 +1,5 @@
+const User = require('../models/user');
+
 module.exports.getLogin = (req, res) => {
     const isLoggedIn = req.get('Cookie');
     console.log(isLoggedIn);
@@ -8,33 +10,21 @@ module.exports.getLogin = (req, res) => {
 };
 
 module.exports.postLogin = (req, res) => {
-    req.session.isLoggedIn = true;
-    res.redirect('/');
-    // const email = req.body.email;
-    // const password = req.body.password;
-    // User.findOne({ email: email })
-    //     .then((user) => {
-    //         if (!user) {
-    //             req.flash('error', 'ایمیل یا رمز عبور اشتباه است');
-    //             return res.redirect('/login');
-    //         }
-    //         bcrypt
-    //             .compare(password, user.password)
-    //             .then((result) => {
-    //                 req.session.isLoggedIn = true;
-    //                 req.session.user = user;
-    //                 return req.session.save((err) => {
-    //                     console.log(err);
-    //                     res.redirect('/');
-    //                 });
-    //             })
-    //             .catch((err) => {
-    //                 console.log(err);
-    //                 req.flash('error', 'ایمیل یا رمز عبور اشتباه است');
-    //                 res.redirect('/login');
-    //             });
-    //     })
-    //     .catch((err) => {
-    //         console.log(err);
-    //     });
+    User.findById('675af5da9e85329026f53def')
+        .then((user) => {
+            req.session.isLoggedIn = true;
+            req.session.user = user;
+            req.session.save((err) => {
+                console.log(err);
+                res.redirect('/');
+            });
+        })
+        .catch((err) => console.log(err));
+};
+
+module.exports.postLogout = (req, res) => {
+    req.session.destroy((err) => {
+        console.log(err);
+        res.redirect('/');
+    });
 };
