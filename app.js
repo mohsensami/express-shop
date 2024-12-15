@@ -4,6 +4,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 // const mongoConnect = require('./util/database').mongodbConnect;
 const mongoose = require('mongoose');
+const session = require('express-session');
+const MongoDBStore = require('connect-mongodb-session')(session);
 
 const User = require('./models/user');
 
@@ -12,12 +14,24 @@ const shopRoutes = require('./routes/shop');
 const authRoutes = require('./routes/auth');
 
 const app = express();
+const store = new MongoDBStore({
+    uri: 'mongodb://127.0.0.1:27017/Shop',
+    collection: 'session',
+});
 
 app.set('view engine', 'ejs');
 app.set('views', 'views/ejs');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(
+    session({
+        secret: 'secret key',
+        resave: false,
+        saveUninitialized: false,
+        store: store,
+    })
+);
 
 app.use((req, res, next) => {
     User.findById('675af5da9e85329026f53def')

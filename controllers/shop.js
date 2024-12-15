@@ -26,6 +26,7 @@ module.exports.getIndex = (req, res) => {
         res.render('shop/index', {
             pageTitle: 'Shop',
             productsArray: products,
+            isAuth: req.isLoggedIn,
         });
     });
 };
