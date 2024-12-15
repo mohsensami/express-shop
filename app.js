@@ -34,7 +34,10 @@ app.use(
 );
 
 app.use((req, res, next) => {
-    User.findById('675af5da9e85329026f53def')
+    if (!req.session.user) {
+        return next();
+    }
+    User.findById(req.session.user._id)
         .then((user) => {
             req.user = user;
             next();

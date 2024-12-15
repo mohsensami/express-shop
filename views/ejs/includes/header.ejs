@@ -482,134 +482,139 @@
                             <!-- navbar menu Start -->
                             <ul class="main-menu-horizontal d-none d-lg-flex">
                                 <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-                                <li>
-                                    <form action="/logout" method="POST" class="logout-form">
-                                        <button type="submit"> Logout </button>
-                                    </form>
-                                </li>
-                                <li class="nav-item"><a class="nav-link" href="/products">Products</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/cart">Cart</a></li>
-                                <li class="nav-item"><a class="nav-link" href="/checkout">Checkout</a></li>
-                                <% if(isAuth){ %>
-                                    <li class="nav-item"><a class="nav-link" href="/admin/products">Admin Products</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="/admin/add-product">Add Product</a></li>
-                                    <% } %>
-                                        <li class="nav-item"><a class="nav-link" href="/orders">Orders</a></li>
-                                        <li class="position-static menu-item-has-children">
-                                            <a href="#0" class="collapsed" data-bs-toggle="collapse" data-bs-target="#menuVertical6-8" aria-controls="menuVertical6-8" aria-expanded="false" aria-label="Toggle navigation">Womens</a>
+                                <% if (!isAuth) { %>
+                                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                                    <%} else { %>
+                                        <li>
+                                            <form action="/logout" method="POST" class="logout-form">
+                                                <button type="submit"> Logout </button>
+                                            </form>
+                                        </li>
+                                        <% } %>
 
-                                            <!-- sub mega dropdown Start -->
-                                            <ul class="sub-mega-dropdown collapse" id="menuVertical6-8">
-                                                <li>
-                                                    <div class="mega-dropdown-menu">
-                                                        <ul class="container mega-dropdown d-flex flex-wrap">
-                                                            <li class="
+
+                                            <li class="nav-item"><a class="nav-link" href="/products">Products</a></li>
+                                            <% if(isAuth){ %>
+                                                <li class="nav-item"><a class="nav-link" href="/checkout">Checkout</a></li>
+                                                <li class="nav-item"><a class="nav-link" href="/cart">Cart</a></li>
+                                                <li class="nav-item"><a class="nav-link" href="/admin/products">Admin Products</a></li>
+                                                <li class="nav-item"><a class="nav-link" href="/admin/add-product">Add Product</a></li>
+                                                <% } %>
+                                                    <li class="nav-item"><a class="nav-link" href="/orders">Orders</a></li>
+                                                    <li class="position-static menu-item-has-children">
+                                                        <a href="#0" class="collapsed" data-bs-toggle="collapse" data-bs-target="#menuVertical6-8" aria-controls="menuVertical6-8" aria-expanded="false" aria-label="Toggle navigation">Womens</a>
+
+                                                        <!-- sub mega dropdown Start -->
+                                                        <ul class="sub-mega-dropdown collapse" id="menuVertical6-8">
+                                                            <li>
+                                                                <div class="mega-dropdown-menu">
+                                                                    <ul class="container mega-dropdown d-flex flex-wrap">
+                                                                        <li class="
                                   mega-dropdown-list
                                   menu-item-has-children
                                 ">
-                                                                <h6 class="
+                                                                            <h6 class="
                                     heading-6
                                     font-weight-500
                                     mega-title
                                     collapsed
                                   " data-bs-toggle="collapse" data-bs-target="#menuVertical6-9" aria-controls="menuVertical6-9" aria-expanded="false" aria-label="Toggle navigation">
-                                                                    New Arrivals
-                                                                </h6>
-                                                                <ul class="collapse" id="menuVertical6-9">
-                                                                    <li><a href="#0">Dressess</a></li>
-                                                                    <li><a href="#0">Jackets</a></li>
-                                                                    <li>
-                                                                        <a href="#0">Hoodies &amp; Sweatshirts</a>
-                                                                    </li>
-                                                                    <li><a href="#0">Sweaters</a></li>
-                                                                    <li><a href="#0">Tops &amp; Tees</a></li>
-                                                                    <li><a href="#0">Party Dressess</a></li>
-                                                                </ul>
-                                                            </li>
-                                                            <li class="
+                                                                                New Arrivals
+                                                                            </h6>
+                                                                            <ul class="collapse" id="menuVertical6-9">
+                                                                                <li><a href="#0">Dressess</a></li>
+                                                                                <li><a href="#0">Jackets</a></li>
+                                                                                <li>
+                                                                                    <a href="#0">Hoodies &amp; Sweatshirts</a>
+                                                                                </li>
+                                                                                <li><a href="#0">Sweaters</a></li>
+                                                                                <li><a href="#0">Tops &amp; Tees</a></li>
+                                                                                <li><a href="#0">Party Dressess</a></li>
+                                                                            </ul>
+                                                                        </li>
+                                                                        <li class="
                                   mega-dropdown-list
                                   menu-item-has-children
                                 ">
-                                                                <h6 class="
+                                                                            <h6 class="
                                     heading-6
                                     font-weight-500
                                     mega-title
                                     collapsed
                                   " data-bs-toggle="collapse" data-bs-target="#menuVertical6-10" aria-controls="menuVertical6-10" aria-expanded="false" aria-label="Toggle navigation">
-                                                                    Trending
-                                                                </h6>
-                                                                <ul class="collapse" id="menuVertical6-10">
-                                                                    <li><a href="#0">Dressess</a></li>
-                                                                    <li><a href="#0">Jackets</a></li>
-                                                                    <li>
-                                                                        <a href="#0">Hoodies &amp; Sweatshirts</a>
-                                                                    </li>
-                                                                    <li><a href="#0">Sweaters</a></li>
-                                                                    <li><a href="#0">Tops &amp; Tees</a></li>
-                                                                    <li><a href="#0">Party Dressess</a></li>
-                                                                </ul>
-                                                            </li>
-                                                            <li class="
+                                                                                Trending
+                                                                            </h6>
+                                                                            <ul class="collapse" id="menuVertical6-10">
+                                                                                <li><a href="#0">Dressess</a></li>
+                                                                                <li><a href="#0">Jackets</a></li>
+                                                                                <li>
+                                                                                    <a href="#0">Hoodies &amp; Sweatshirts</a>
+                                                                                </li>
+                                                                                <li><a href="#0">Sweaters</a></li>
+                                                                                <li><a href="#0">Tops &amp; Tees</a></li>
+                                                                                <li><a href="#0">Party Dressess</a></li>
+                                                                            </ul>
+                                                                        </li>
+                                                                        <li class="
                                   mega-dropdown-list
                                   menu-item-has-children
                                 ">
-                                                                <h6 class="
+                                                                            <h6 class="
                                     heading-6
                                     font-weight-500
                                     mega-title
                                     collapsed
                                   " data-bs-toggle="collapse" data-bs-target="#menuVertical6-11" aria-controls="menuVertical6-11" aria-expanded="false" aria-label="Toggle navigation">
-                                                                    Accessories
-                                                                </h6>
-                                                                <ul class="collapse" id="menuVertical6-11">
-                                                                    <li>
-                                                                        <a href="#0">Hoodies &amp; Sweatshirts</a>
-                                                                    </li>
-                                                                    <li><a href="#0">Jackets &amp; Coats</a></li>
-                                                                    <li><a href="#0">Pants</a></li>
-                                                                    <li><a href="#0">Jeans</a></li>
-                                                                    <li><a href="#0">Tops &amp; Tees</a></li>
-                                                                    <li><a href="#0">Casual Shorts</a></li>
-                                                                </ul>
-                                                            </li>
-                                                            <li class="mega-dropdown-list">
-                                                                <img src="assets/images/menu-slider-1.png" alt="">
+                                                                                Accessories
+                                                                            </h6>
+                                                                            <ul class="collapse" id="menuVertical6-11">
+                                                                                <li>
+                                                                                    <a href="#0">Hoodies &amp; Sweatshirts</a>
+                                                                                </li>
+                                                                                <li><a href="#0">Jackets &amp; Coats</a></li>
+                                                                                <li><a href="#0">Pants</a></li>
+                                                                                <li><a href="#0">Jeans</a></li>
+                                                                                <li><a href="#0">Tops &amp; Tees</a></li>
+                                                                                <li><a href="#0">Casual Shorts</a></li>
+                                                                            </ul>
+                                                                        </li>
+                                                                        <li class="mega-dropdown-list">
+                                                                            <img src="assets/images/menu-slider-1.png" alt="">
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
                                                             </li>
                                                         </ul>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            <!-- sub mega dropdown Ends -->
-                                        </li>
-                                        <li class="menu-item-has-children">
-                                            <a href="#0" class="collapsed" data-bs-toggle="collapse" data-bs-target="#menuVertical6-12" aria-controls="menuVertical6-12" aria-expanded="false" aria-label="Toggle navigation">More</a>
-                                            <!-- sub menu Start -->
-                                            <ul class="sub-menu collapse" id="menuVertical6-12">
-                                                <li><a href="#0">Dropped Menu 1</a></li>
-                                                <li class="menu-item-has-children">
-                                                    <a href="#0" class="collapsed" data-bs-toggle="collapse" data-bs-target="#menuVertical6-13" aria-controls="menuVertical6-13" aria-expanded="false" aria-label="Toggle navigation">Dropped Menu 2 <i class="mdi mdi-chevron-right"></i></a>
-                                                    <ul class="sub-menu collapse" id="menuVertical6-13">
-                                                        <li><a href="#0">Sub Dropped Menu 1</a></li>
-                                                        <li><a href="#0">Sub Dropped Menu 2</a></li>
-                                                        <li><a href="#0">Sub Dropped Menu 3</a></li>
-                                                        <li class="menu-item-has-children">
-                                                            <a href="#0" class="collapsed" data-bs-toggle="collapse" data-bs-target="#menuVertical6-14" aria-controls="menuVertical6-14" aria-expanded="false" aria-label="Toggle navigation">Sub Dropped Menu 4
-                                                                <i class="mdi mdi-chevron-right"></i></a>
-                                                            <ul class="sub-menu collapse" id="menuVertical6-14">
-                                                                <li><a href="#0">Sub Dropped Menu 1</a></li>
-                                                                <li><a href="#0">Sub Dropped Menu 2</a></li>
-                                                                <li><a href="#0">Sub Dropped Menu 3</a></li>
-                                                                <li><a href="#0">Sub Dropped Menu 4</a></li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#0">Dropped Menu 3</a></li>
-                                                <li><a href="#0">Dropped Menu 4</a></li>
-                                            </ul>
-                                            <!-- sub menu Ends -->
-                                        </li>
+                                                        <!-- sub mega dropdown Ends -->
+                                                    </li>
+                                                    <li class="menu-item-has-children">
+                                                        <a href="#0" class="collapsed" data-bs-toggle="collapse" data-bs-target="#menuVertical6-12" aria-controls="menuVertical6-12" aria-expanded="false" aria-label="Toggle navigation">More</a>
+                                                        <!-- sub menu Start -->
+                                                        <ul class="sub-menu collapse" id="menuVertical6-12">
+                                                            <li><a href="#0">Dropped Menu 1</a></li>
+                                                            <li class="menu-item-has-children">
+                                                                <a href="#0" class="collapsed" data-bs-toggle="collapse" data-bs-target="#menuVertical6-13" aria-controls="menuVertical6-13" aria-expanded="false" aria-label="Toggle navigation">Dropped Menu 2 <i class="mdi mdi-chevron-right"></i></a>
+                                                                <ul class="sub-menu collapse" id="menuVertical6-13">
+                                                                    <li><a href="#0">Sub Dropped Menu 1</a></li>
+                                                                    <li><a href="#0">Sub Dropped Menu 2</a></li>
+                                                                    <li><a href="#0">Sub Dropped Menu 3</a></li>
+                                                                    <li class="menu-item-has-children">
+                                                                        <a href="#0" class="collapsed" data-bs-toggle="collapse" data-bs-target="#menuVertical6-14" aria-controls="menuVertical6-14" aria-expanded="false" aria-label="Toggle navigation">Sub Dropped Menu 4
+                                                                            <i class="mdi mdi-chevron-right"></i></a>
+                                                                        <ul class="sub-menu collapse" id="menuVertical6-14">
+                                                                            <li><a href="#0">Sub Dropped Menu 1</a></li>
+                                                                            <li><a href="#0">Sub Dropped Menu 2</a></li>
+                                                                            <li><a href="#0">Sub Dropped Menu 3</a></li>
+                                                                            <li><a href="#0">Sub Dropped Menu 4</a></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li><a href="#0">Dropped Menu 3</a></li>
+                                                            <li><a href="#0">Dropped Menu 4</a></li>
+                                                        </ul>
+                                                        <!-- sub menu Ends -->
+                                                    </li>
                             </ul>
                             <!-- navbar menu Ends -->
                         </nav>

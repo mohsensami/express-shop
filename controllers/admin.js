@@ -3,6 +3,7 @@ const Product = require('../models/single-product');
 module.exports.addProductPage = (req, res) => {
     res.render('admin/add-product', {
         pageTitle: 'Add Product',
+        isAuth: req.session.isLoggedIn,
     });
 };
 
@@ -30,6 +31,7 @@ module.exports.getProducts = (req, res) => {
         res.render('admin/products', {
             pageTitle: 'Admin Products',
             productsArray: products,
+            isAuth: req.session.isLoggedIn,
         });
     });
 };

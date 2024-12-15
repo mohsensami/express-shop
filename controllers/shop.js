@@ -5,6 +5,7 @@ module.exports.getAllProducts = (req, res) => {
         res.render('shop/product-list', {
             pageTitle: 'Product List',
             productsArray: products,
+            isAuth: req.session.isLoggedIn,
         });
     });
 };
@@ -16,6 +17,7 @@ module.exports.getOneProduct = (req, res) => {
             res.render('shop/product-detail', {
                 product: product,
                 pageTitle: product.title,
+                isAuth: req.session.isLoggedIn,
             });
         })
         .catch((err) => console.log(err));
@@ -26,7 +28,7 @@ module.exports.getIndex = (req, res) => {
         res.render('shop/index', {
             pageTitle: 'Shop',
             productsArray: products,
-            isAuth: req.isLoggedIn,
+            isAuth: req.session.isLoggedIn,
         });
     });
 };
@@ -40,6 +42,7 @@ module.exports.getCart = (req, res) => {
             res.render('shop/cart', {
                 pageTitle: 'Cart',
                 products: products,
+                isAuth: req.session.isLoggedIn,
             });
         })
         .catch((err) => {
