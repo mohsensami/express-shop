@@ -66,18 +66,6 @@ const connectionURL =
 mongoose
     .connect(connectionURL, {})
     .then((result) => {
-        User.findOne().then((user) => {
-            if (!user) {
-                const user = new User({
-                    username: 'admin',
-                    email: 'admin@email.com',
-                    car: {
-                        items: [],
-                    },
-                });
-                user.save();
-            }
-        });
         app.listen(3000);
     })
     .catch((err) => {
