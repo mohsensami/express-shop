@@ -1,12 +1,75 @@
 <%- include('../includes/header.ejs') %>
-    <main class="content">
-        <h1 class="page-title">Signup</h1>
+    <main class="">
 
-        <form method="POST" action="/singup" class="add-product-form" novalidate>
-            <input type="email" name="email" placeholder="ایمیل">
-            <input type="password" name="password" placeholder="رمز عبور">
-            <input type="password" name="confirmPassword" placeholder="تکرار رمز عبور">
-            <button type="submit">Signup</button>
-        </form>
+
+
+
+        <div class="container justify-content-center">
+            <div class="">
+                <div class="login-registration-style-3 mt-50">
+                    <h1 class="page-title text-center">
+                        <%= pageTitle %>
+                    </h1>
+                    <h4 class="heading-4 font-weight-500 title">
+                        Create account
+                    </h4>
+                    <p class="paragraph-small font-weight-300 mt-15">
+                        Create account for a faster checkout.
+                    </p>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <form method="POST" action="/singup" class="add-product-form" novalidate>
+                                <div class="single-form form-default">
+                                    <label>Email</label>
+                                    <div class="form-input">
+                                        <input type="email" name="email" placeholder="Email">
+                                        <i class="mdi mdi-account"></i>
+                                    </div>
+                                </div>
+                                <div class="single-form form-default">
+                                    <label>password</label>
+                                    <div class="form-input">
+                                        <input type="password" name="password" placeholder="password ">
+                                        <i class="mdi mdi-email"></i>
+                                    </div>
+                                </div>
+                                <div class="single-form form-default">
+                                    <label>confirm Password</label>
+                                    <div class="form-input">
+                                        <input type="password" name="confirmPassword" placeholder=" confirm Password ">
+                                        <i class="mdi mdi-lock"></i>
+                                        <span toggle="#password-9" class="mdi mdi-eye-outline toggle-password"></span>
+                                    </div>
+                                </div>
+                                <div class="single-checkbox checkbox-style-3">
+                                    <input type="checkbox" id="login-11">
+                                    <label for="login-11"><span></span> </label>
+                                    <p>I accept the Terrms of Use and Privacy Policy.</p>
+                                </div>
+                                <div class="single-form">
+                                    <button type="submit" class="main-btn primary-btn">Signup</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-5">
+                            <p class="account">Login with Social Account</p>
+                            <ul>
+                                <li>
+                                    <a href="#0" class="facebook-login-registration"><i class="lni lni-facebook-original"></i>
+                                        <span>Login with Facebook</span></a>
+                                </li>
+                                <li>
+                                    <a href="#0" class="google-login-registration"><img src="assets/images/google-logo.svg" alt="">
+                                        <span>Login with Google</span></a>
+                                </li>
+                            </ul>
+                            <p class="login">
+                                Haven’t an account? <a href="#0">Log in</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <%- include('../includes/footer.ejs') %>
