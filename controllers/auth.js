@@ -11,16 +11,33 @@ module.exports.getLogin = (req, res) => {
 };
 
 module.exports.postLogin = (req, res) => {
-    User.findById('675af5da9e85329026f53def')
+    const email = req.body.email;
+    const password = req.body.password;
+    User.findOne({ email: email })
         .then((user) => {
-            req.session.isLoggedIn = true;
-            req.session.user = user;
-            req.session.save((err) => {
-                console.log(err);
-                res.redirect('/');
-            });
+            if (!user) {
+                // req.flash('error', 'ایمیل یا رمز عبور اشتباه است');
+                return res.redirect('/login');
+            }
+            bcrypt
+                .compare(password, user.password)
+                .then((result) => {
+                    req.session.isLoggedIn = true;
+                    req.session.user = user;
+                    return req.session.save((err) => {
+                        console.log(err);
+                        res.redirect('/');
+                    });
+                })
+                .catch((err) => {
+                    console.log(err);
+                    // req.flash('error', 'ایمیل یا رمز عبور اشتباه است');
+                    res.redirect('/login');
+                });
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+            console.log(err);
+        });
 };
 
 module.exports.getSingup = (req, res) => {
