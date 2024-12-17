@@ -58,6 +58,11 @@ module.exports.getSingup = (req, res) => {
         pageTitle: 'signup',
         isAuth: false,
         errorMessage: message,
+        lastInput: {
+            email: '',
+            password: '',
+            confirmPassword: '',
+        },
     });
 };
 
@@ -72,6 +77,11 @@ module.exports.postSingup = (req, res) => {
             pageTitle: 'عضویت',
             isAuth: false,
             errorMessage: erorrs.array()[0].msg,
+            lastInput: {
+                email: email,
+                password: password,
+                confirmPassword: confirmPassword,
+            },
         });
     }
     User.findOne({ email: email })
