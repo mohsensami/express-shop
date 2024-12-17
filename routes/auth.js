@@ -13,17 +13,16 @@ router.get('/signup', authControllers.getSingup);
 
 router.post(
     '/signup',
-    check('email').isEmail().withMessage('آدرس ایمیل اشتباه است'),
-    // .normalizeEmail(),
-    // check('password').isLength({ min: 5 }).withMessage('رمز عبور باید حداقل ۵ کاراکتر باشد').trim(),
-    // check('confirmPassword')
-    //     .trim()
-    //     .custom((value, { req }) => {
-    //         if (value !== req.body.password) {
-    //             throw new Error('رمز عبور یکسان نیست');
-    //         }
-    //         return true;
-    //     }),
+    check('email').isEmail().withMessage('آدرس ایمیل اشتباه است').normalizeEmail(),
+    check('password').isLength({ min: 5 }).withMessage('رمز عبور باید حداقل ۵ کاراکتر باشد').trim(),
+    check('confirmPassword')
+        .trim()
+        .custom((value, { req }) => {
+            if (value !== req.body.password) {
+                throw new Error('رمز عبور یکسان نیست');
+            }
+            return true;
+        }),
     authControllers.postSingup
 );
 
