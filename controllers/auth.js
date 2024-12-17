@@ -8,11 +8,9 @@ module.exports.getLogin = (req, res) => {
     } else {
         message = null;
     }
-    const isLoggedIn = req.get('Cookie');
-    console.log(isLoggedIn);
     res.render('auth/login', {
         pageTitle: 'Login',
-        isAuth: isLoggedIn,
+        isAuth: false,
         errorMessage: message,
     });
 };

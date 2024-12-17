@@ -27,7 +27,7 @@ module.exports.sendProducts = (req, res) => {
 };
 
 module.exports.getProducts = (req, res) => {
-    Product.find().then((products) => {
+    Product.find({ userId: req.user._id }).then((products) => {
         res.render('admin/products', {
             pageTitle: 'Admin Products',
             productsArray: products,
@@ -38,7 +38,7 @@ module.exports.getProducts = (req, res) => {
 
 module.exports.deleteProduct = (req, res) => {
     const pId = req.body.productId;
-    Product.findByIdAndDelete(pId)
+    Product.deleteOne({ _id: pId, userId: req.user._id })
         .then(() => {
             console.log('Product Deleted');
             res.redirect('/admin/add-product');
