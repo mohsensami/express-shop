@@ -1,4 +1,5 @@
 const express = require('express');
+const { check } = require('express-validator');
 
 const authControllers = require('../controllers/auth');
 
@@ -11,8 +12,9 @@ router.post('/login', authControllers.postLogin);
 router.get('/signup', authControllers.getSingup);
 
 router.post(
-    '/singup',
-    // check('email').isEmail().withMessage('آدرس ایمیل اشتباه است').normalizeEmail(),
+    '/signup',
+    check('email').isEmail().withMessage('آدرس ایمیل اشتباه است'),
+    // .normalizeEmail(),
     // check('password').isLength({ min: 5 }).withMessage('رمز عبور باید حداقل ۵ کاراکتر باشد').trim(),
     // check('confirmPassword')
     //     .trim()
