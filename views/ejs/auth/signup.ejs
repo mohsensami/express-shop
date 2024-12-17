@@ -10,64 +10,76 @@
                     <h1 class="page-title text-center">
                         <%= pageTitle %>
                     </h1>
-                    <h4 class="heading-4 font-weight-500 title">
-                        Create account
-                    </h4>
-                    <p class="paragraph-small font-weight-300 mt-15">
-                        Create account for a faster checkout.
-                    </p>
-                    <div class="row">
-                        <div class="col-md-7">
-                            <form method="POST" action="/singup" class="add-product-form" novalidate>
-                                <div class="single-form form-default">
-                                    <label>Email</label>
-                                    <div class="form-input">
-                                        <input type="email" name="email" placeholder="Email">
-                                        <i class="mdi mdi-account"></i>
-                                    </div>
-                                </div>
-                                <div class="single-form form-default">
-                                    <label>password</label>
-                                    <div class="form-input">
-                                        <input type="password" name="password" placeholder="password ">
-                                        <i class="mdi mdi-email"></i>
-                                    </div>
-                                </div>
-                                <div class="single-form form-default">
-                                    <label>confirm Password</label>
-                                    <div class="form-input">
-                                        <input type="password" name="confirmPassword" placeholder=" confirm Password ">
-                                        <i class="mdi mdi-lock"></i>
-                                        <span toggle="#password-9" class="mdi mdi-eye-outline toggle-password"></span>
-                                    </div>
-                                </div>
-                                <div class="single-checkbox checkbox-style-3">
-                                    <input type="checkbox" id="login-11">
-                                    <label for="login-11"><span></span> </label>
-                                    <p>I accept the Terrms of Use and Privacy Policy.</p>
-                                </div>
-                                <div class="single-form">
-                                    <button type="submit" class="main-btn primary-btn">Signup</button>
-                                </div>
-                            </form>
+                    <% if (errorMessage) { %>
+                        <div class="
+                      alert alert-secondary-1-light alert-dismissible
+                      fade
+                      show
+                    " role="alert">
+                            <%= errorMessage %>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                                    <i class="mdi mdi-close"></i>
+                                </button>
                         </div>
-                        <div class="col-md-5">
-                            <p class="account">Login with Social Account</p>
-                            <ul>
-                                <li>
-                                    <a href="#0" class="facebook-login-registration"><i class="lni lni-facebook-original"></i>
-                                        <span>Login with Facebook</span></a>
-                                </li>
-                                <li>
-                                    <a href="#0" class="google-login-registration"><img src="assets/images/google-logo.svg" alt="">
-                                        <span>Login with Google</span></a>
-                                </li>
-                            </ul>
-                            <p class="login">
-                                Haven’t an account? <a href="#0">Log in</a>
+                        <% } %>
+                            <h4 class="heading-4 font-weight-500 title">
+                                Create account
+                            </h4>
+                            <p class="paragraph-small font-weight-300 mt-15">
+                                Create account for a faster checkout.
                             </p>
-                        </div>
-                    </div>
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <form method="POST" action="/singup" class="add-product-form" novalidate>
+                                        <div class="single-form form-default">
+                                            <label>Email</label>
+                                            <div class="form-input">
+                                                <input type="email" name="email" placeholder="Email">
+                                                <i class="mdi mdi-account"></i>
+                                            </div>
+                                        </div>
+                                        <div class="single-form form-default">
+                                            <label>password</label>
+                                            <div class="form-input">
+                                                <input type="password" name="password" placeholder="password ">
+                                                <i class="mdi mdi-email"></i>
+                                            </div>
+                                        </div>
+                                        <div class="single-form form-default">
+                                            <label>confirm Password</label>
+                                            <div class="form-input">
+                                                <input type="password" name="confirmPassword" placeholder=" confirm Password ">
+                                                <i class="mdi mdi-lock"></i>
+                                                <span toggle="#password-9" class="mdi mdi-eye-outline toggle-password"></span>
+                                            </div>
+                                        </div>
+                                        <div class="single-checkbox checkbox-style-3">
+                                            <input type="checkbox" id="login-11">
+                                            <label for="login-11"><span></span> </label>
+                                            <p>I accept the Terrms of Use and Privacy Policy.</p>
+                                        </div>
+                                        <div class="single-form">
+                                            <button type="submit" class="main-btn primary-btn">Signup</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-md-5">
+                                    <p class="account">Login with Social Account</p>
+                                    <ul>
+                                        <li>
+                                            <a href="#0" class="facebook-login-registration"><i class="lni lni-facebook-original"></i>
+                                                <span>Login with Facebook</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="#0" class="google-login-registration"><img src="assets/images/google-logo.svg" alt="">
+                                                <span>Login with Google</span></a>
+                                        </li>
+                                    </ul>
+                                    <p class="login">
+                                        Haven’t an account? <a href="#0">Log in</a>
+                                    </p>
+                                </div>
+                            </div>
                 </div>
             </div>
         </div>

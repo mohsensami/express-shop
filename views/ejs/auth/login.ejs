@@ -7,58 +7,71 @@
                 <h1 class="heading-4 font-weight-500 title">
                     <%= pageTitle %>
                 </h1>
-                <div class=" login-registration-form pt-10">
-                    <form method="POST" action="/login" class="add-product-form">
-                        <div class="single-form form-default form-border">
-                            <label>Email Address</label>
-                            <div class="form-input">
-                                <input type="email" name="email" placeholder="user@email.com">
-                                <i class="mdi mdi-email"></i>
-                            </div>
-                        </div>
-                        <div class="single-form form-default form-border">
-                            <label>Choose Password</label>
-                            <div class="form-input">
-                                <input type="password" name="password" placeholder=" Password">
-                                <i class="mdi mdi-lock"></i>
-                                <span toggle="#password-5" class="mdi mdi-eye-outline toggle-password"></span>
-                            </div>
-                        </div>
-                        <div class="
+                <% if (errorMessage) { %>
+                    <div class="
+                      alert alert-secondary-1-light alert-dismissible
+                      fade
+                      show
+                    " role="alert">
+                        <%= errorMessage %>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                                <i class="mdi mdi-close"></i>
+                            </button>
+                    </div>
+
+                    <% } %>
+                        <div class=" login-registration-form pt-10">
+                            <form method="POST" action="/login" class="add-product-form">
+                                <div class="single-form form-default form-border">
+                                    <label>Email Address</label>
+                                    <div class="form-input">
+                                        <input type="email" name="email" placeholder="user@email.com">
+                                        <i class="mdi mdi-email"></i>
+                                    </div>
+                                </div>
+                                <div class="single-form form-default form-border">
+                                    <label>Choose Password</label>
+                                    <div class="form-input">
+                                        <input type="password" name="password" placeholder=" Password">
+                                        <i class="mdi mdi-lock"></i>
+                                        <span toggle="#password-5" class="mdi mdi-eye-outline toggle-password"></span>
+                                    </div>
+                                </div>
+                                <div class="
                         login-checkbox-forget
                         d-sm-flex
                         justify-content-between
                         align-items-center
                       ">
-                            <div class="single-checkbox checkbox-style-3">
-                                <input type="checkbox" id="login-5">
-                                <label for="login-5"><span></span> </label>
-                                <p>Remember Me</p>
-                            </div>
-                            <a class="forget" href="#0">Forget Password?</a>
+                                    <div class="single-checkbox checkbox-style-3">
+                                        <input type="checkbox" id="login-5">
+                                        <label for="login-5"><span></span> </label>
+                                        <p>Remember Me</p>
+                                    </div>
+                                    <a class="forget" href="#0">Forget Password?</a>
+                                </div>
+                                <div class="single-form">
+                                    <button type="submit" class="main-btn primary-btn">Signin</button>
+                                </div>
+                            </form>
                         </div>
-                        <div class="single-form">
-                            <button type="submit" class="main-btn primary-btn">Signin</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="d-sm-flex justify-content-between align-items-center">
-                    <p class="login">
-                        Don’t have an account? <a href="#0">Sign up</a>
-                    </p>
+                        <div class="d-sm-flex justify-content-between align-items-center">
+                            <p class="login">
+                                Don’t have an account? <a href="#0">Sign up</a>
+                            </p>
 
-                    <ul>
-                        <li>
-                            <p class="account">Or</p>
-                        </li>
-                        <li>
-                            <a href="#0" class="facebook-login-registration"><i class="lni lni-facebook-original"></i></a>
-                        </li>
-                        <li>
-                            <a href="#0" class="google-login-registration"><img src="assets/images/google-logo.svg" alt=""></a>
-                        </li>
-                    </ul>
-                </div>
+                            <ul>
+                                <li>
+                                    <p class="account">Or</p>
+                                </li>
+                                <li>
+                                    <a href="#0" class="facebook-login-registration"><i class="lni lni-facebook-original"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#0" class="google-login-registration"><img src="assets/images/google-logo.svg" alt=""></a>
+                                </li>
+                            </ul>
+                        </div>
             </div>
         </div>
 

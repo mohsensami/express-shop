@@ -2,11 +2,18 @@ const bcrypt = require('bcryptjs');
 const User = require('../models/user');
 
 module.exports.getLogin = (req, res) => {
+    let message = req.flash('error');
+    if (message.length > 0) {
+        message = message[0];
+    } else {
+        message = null;
+    }
     const isLoggedIn = req.get('Cookie');
     console.log(isLoggedIn);
     res.render('auth/login', {
         pageTitle: 'Login',
         isAuth: isLoggedIn,
+        errorMessage: message,
     });
 };
 
@@ -16,7 +23,7 @@ module.exports.postLogin = (req, res) => {
     User.findOne({ email: email })
         .then((user) => {
             if (!user) {
-                // req.flash('error', 'ایمیل یا رمز عبور اشتباه است');
+                req.flash('error', 'ایمیل یا رمز عبور اشتباه است');
                 return res.redirect('/login');
             }
             bcrypt
@@ -31,7 +38,7 @@ module.exports.postLogin = (req, res) => {
                 })
                 .catch((err) => {
                     console.log(err);
-                    // req.flash('error', 'ایمیل یا رمز عبور اشتباه است');
+                    req.flash('error', 'ایمیل یا رمز عبور اشتباه است');
                     res.redirect('/login');
                 });
         })
@@ -41,21 +48,16 @@ module.exports.postLogin = (req, res) => {
 };
 
 module.exports.getSingup = (req, res) => {
-    // let message = req.flash('error');
-    // if (message.length > 0) {
-    //     message = message[0];
-    // } else {
-    //     message = null;
-    // }
+    let message = req.flash('error');
+    if (message.length > 0) {
+        message = message[0];
+    } else {
+        message = null;
+    }
     res.render('auth/signup', {
         pageTitle: 'signup',
         isAuth: false,
-        // errorMessage: message,
-        // lastInput: {
-        //     email: '',
-        //     password: '',
-        //     confirmPassword: '',
-        // },
+        errorMessage: message,
     });
 };
 
@@ -66,6 +68,7 @@ module.exports.postSingup = (req, res) => {
     User.findOne({ email: email })
         .then((userDoc) => {
             if (userDoc) {
+                req.flash('error', 'ایمیل تکراری است');
                 return res.redirect('/signup');
             }
             return bcrypt.hash(password, 12);
