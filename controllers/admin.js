@@ -1,5 +1,15 @@
 const Product = require('../models/single-product');
 
+module.exports.getDashboard = (req, res) => {
+    Product.find({ userId: req.user._id }).then((products) => {
+        res.render('admin/dashboard', {
+            pageTitle: 'Dashboard',
+            productsArray: products,
+            isAuth: req.session.isLoggedIn,
+        });
+    });
+};
+
 module.exports.addProductPage = (req, res) => {
     res.render('admin/add-product', {
         pageTitle: 'Add Product',
