@@ -18,38 +18,38 @@
                                 <div class="product-image">
                                     <div class="product-image-active tab-content" id="v-pills-tabContent-2">
                                         <div class="single-image tab-pane fade show active" id="v-pills-6" role="tabpanel" aria-labelledby="v-pills-6-tab">
-                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/product-1.jpg" alt="">
+                                            <img src="/<%= product.image %>" <%=product.title %>>
                                         </div>
                                         <div class="single-image tab-pane fade" id="v-pills-7" role="tabpanel" aria-labelledby="v-pills-7-tab">
-                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/product-2.jpg" alt="">
+                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/product-2.jpg" <%=product.title %>>
                                         </div>
                                         <div class="single-image tab-pane fade" id="v-pills-8" role="tabpanel" aria-labelledby="v-pills-8-tab">
-                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/product-3.jpg" alt="">
+                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/product-3.jpg" <%=product.title %>>
                                         </div>
                                         <div class="single-image tab-pane fade" id="v-pills-9" role="tabpanel" aria-labelledby="v-pills-9-tab">
-                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/product-4.jpg" alt="">
+                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/product-4.jpg" <%=product.title %>>
                                         </div>
                                         <div class="single-image tab-pane fade" id="v-pills-10" role="tabpanel" aria-labelledby="v-pills-10-tab">
-                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/product-5.jpg" alt="">
+                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/product-5.jpg" <%=product.title %>>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="product-thumb-image">
                                     <div class="product-thumb-image-active nav nav-pills" id="v-pills-tab-2" role="tablist" aria-orientation="vertical">
                                         <div class="single-thumb active" id="v-pills-6-tab" data-bs-toggle="pill" href="#v-pills-6" role="tab" aria-controls="v-pills-6" aria-selected="true">
-                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/thunb-1.jpg" alt="">
+                                            <img src="/<%= product.image %>" <%=product.title %>>
                                         </div>
                                         <div class="single-thumb" id="v-pills-7-tab" data-bs-toggle="pill" href="#v-pills-7" role="tab" aria-controls="v-pills-7" aria-selected="false">
-                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/thunb-2.jpg" alt="">
+                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/thunb-2.jpg" <%=product.title %>>
                                         </div>
                                         <div class="single-thumb" id="v-pills-8-tab" data-bs-toggle="pill" href="#v-pills-8" role="tab" aria-controls="v-pills-8" aria-selected="false">
-                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/thunb-3.jpg" alt="">
+                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/thunb-3.jpg" <%=product.title %>>
                                         </div>
                                         <div class="single-thumb" id="v-pills-9-tab" data-bs-toggle="pill" href="#v-pills-9" role="tab" aria-controls="v-pills-9" aria-selected="false">
-                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/thunb-4.jpg" alt="">
+                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/thunb-4.jpg" <%=product.title %>>
                                         </div>
                                         <div class="single-thumb" id="v-pills-10-tab" data-bs-toggle="pill" href="#v-pills-10" role="tab" aria-controls="v-pills-10" aria-selected="false">
-                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/thunb-5.jpg" alt="">
+                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/thunb-5.jpg" <%=product.title %>>
                                         </div>
                                     </div>
                                 </div>
@@ -62,7 +62,7 @@
                                     <div class="items-wrapper" id="select-item-2">
                                         <div class="single-item active">
                                             <div class="items-image">
-                                                <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/product-items-1.jpg" alt="product">
+                                                <img src="/<%= product.image %>" alt="product">
                                             </div>
                                         </div>
                                         <div class="single-item">
@@ -149,7 +149,7 @@
 
                                 <div class="product-btn">
                                     <%- include('../includes/add-to-cart.ejs', {product: product}) %>
-                                        <!-- <a href="#0" class="main-btn secondary-1-btn"><img src="assets/images/icon-svg/cart-8.svg" alt=""> Buy
+                                        <!-- <a href="#0" class="main-btn secondary-1-btn"><img src="assets/images/icon-svg/cart-8.svg" <%= product.title %>> Buy
                                         Now</a> -->
                                 </div>
                             </div>
