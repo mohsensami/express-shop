@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
 const flash = require('connect-flash');
+const multer = require('multer');
 
 const User = require('./models/user');
 
@@ -23,7 +24,17 @@ const store = new MongoDBStore({
 app.set('view engine', 'ejs');
 app.set('views', 'views/ejs');
 
+const fileStorage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'images');
+    },
+    filename: (req, file, cb) => {
+        cb(null, new Date().toISOString() + '-' + file.originalname);
+    },
+});
+
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(multer({ storage: fileStorage }).single('image'))
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(
     session({

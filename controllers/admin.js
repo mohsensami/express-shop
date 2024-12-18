@@ -11,10 +11,12 @@ module.exports.sendProducts = (req, res) => {
     const title = req.body.title;
     const description = req.body.description;
     const price = req.body.price;
+    const image = req.file.path;
     const products = new Product({
         title: title,
         description: description,
         price: price,
+        image: image,
         userId: req.user,
     });
     products

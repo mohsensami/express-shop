@@ -2,10 +2,11 @@
     <main class="content">
         <h1 class="page-title">Add Product</h1>
 
-        <form method="post" class="add-product-form">
+        <form method="post" class="add-product-form" enctype="multipart/form-data">
             <input type="text" class="form-control" name="title" placeholder="Title">
             <input type="text" class="form-control" name="description" placeholder="Description">
             <input type="text" class="form-control" name="price" placeholder="Price">
+            <input type="file" name="image" placeholder="تصویر محصول">
             <button>Add Product</button>
         </form>
 
