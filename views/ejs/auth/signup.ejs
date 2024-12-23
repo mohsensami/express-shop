@@ -1,87 +1,175 @@
-<%- include('../includes/header.ejs') %>
-    <main class="">
+<html lang="en">
 
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
+    <title>Pages / Register - NiceAdmin Bootstrap Template</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta content="" name="description">
+    <meta content="" name="keywords">
 
+    <!-- Favicons -->
+    <link href="https://bootstrapmade.com/content/assets/img/favicon.png" rel="icon">
+    <link href="https://bootstrapmade.com/content/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-        <div class="container justify-content-center">
-            <div class="">
-                <div class="login-registration-style-3 mt-50">
-                    <h1 class="page-title text-center">
-                        <%= pageTitle %>
-                    </h1>
-                    <% if (errorMessage) { %>
-                        <div class="
-                      alert alert-secondary-1-light alert-dismissible
-                      fade
-                      show
-                    " role="alert">
-                            <%= errorMessage %>
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                                    <i class="mdi mdi-close"></i>
-                                </button>
-                        </div>
-                        <% } %>
-                            <h4 class="heading-4 font-weight-500 title">
-                                Create account
-                            </h4>
-                            <p class="paragraph-small font-weight-300 mt-15">
-                                Create account for a faster checkout.
-                            </p>
-                            <div class="row">
-                                <div class="col-md-7">
-                                    <form method="POST" action="/signup" class="add-product-form" novalidate>
-                                        <div class="single-form form-default">
-                                            <label>Email</label>
-                                            <div class="form-input">
-                                                <input type="email" name="email" placeholder="Email" value="<%= lastInput.email %>">
-                                                <i class="mdi mdi-account"></i>
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="https://bootstrapmade.com/content/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://bootstrapmade.com/content/vendors/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://bootstrapmade.com/content/vendors/quill/quill.snow.css" rel="stylesheet">
+    <link href="https://bootstrapmade.com/content/vendors/quill/quill.bubble.css" rel="stylesheet">
+    <link href="https://bootstrapmade.com/content/vendors/remixicon/remixicon.css" rel="stylesheet">
+    <link href="https://bootstrapmade.com/content/vendors/simple-datatables/style.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="/css/style.css" rel="stylesheet">
+
+    <!-- =======================================================
+  * Template Name: NiceAdmin
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Updated: Apr 20 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+    <main>
+        <div class="container">
+
+            <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+                            <div class="d-flex justify-content-center py-4">
+                                <a href="index.html" class="logo d-flex align-items-center w-auto">
+                                    <img src="assets/img/logo.png" alt="">
+                                    <span class="d-none d-lg-block">NiceAdmin</span>
+                                </a>
+                            </div><!-- End Logo -->
+
+                            <div class="card mb-3">
+
+                                <div class="card-body">
+
+                                    <div class="pt-4 pb-2">
+                                        <h5 class="card-title text-center pb-0 fs-4">
+                                            <%= pageTitle %>
+                                        </h5>
+                                        <p class="text-center small">Enter your personal details to create account</p>
+                                    </div>
+
+                                    <div>
+                                        <% if (errorMessage) { %>
+                                            <div class="
+                                          alert alert-secondary-1-light alert-dismissible
+                                          fade
+                                          show
+                                        " role="alert">
+                                                <%= errorMessage %>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                                                        <i class="mdi mdi-close"></i>
+                                                    </button>
+                                            </div>
+                                            <% } %>
+                                    </div>
+
+                                    <!-- <form class="row g-3 needs-validation" novalidate> -->
+
+                                    <form class="row g-3 needs-validation" method="POST" action="/signup" class="add-product-form" novalidate>
+                                        <!-- <div class="col-12">
+                                        <label for="yourName" class="form-label">Your Name</label>
+                                        <input type="text" name="name" class="form-control" id="yourName" required>
+                                        <div class="invalid-feedback">Please, enter your name!</div>
+                                    </div> -->
+
+                                        <div class="col-12">
+                                            <label for="yourEmail" class="form-label">Your Email</label>
+                                            <input class="form-control" type="email" name="email" placeholder="Email" value="<%= lastInput.email %>">
+                                            <!-- <input type="email" name="email" class="form-control" id="yourEmail" required> -->
+                                            <div class="invalid-feedback">Please enter a valid Email adddress!</div>
+                                        </div>
+
+                                        <!-- <div class="col-12">
+                                        <label for="yourUsername" class="form-label">Username</label>
+                                        <div class="input-group has-validation">
+                                            <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                            <input type="text" name="username" class="form-control" id="yourUsername" required>
+                                            <div class="invalid-feedback">Please choose a username.</div>
+                                        </div>
+                                    </div> -->
+
+                                        <div class="col-12">
+                                            <label for="yourPassword" class="form-label">Password</label>
+                                            <input class="form-control" type="password" name="password" placeholder="password " value="<%= lastInput.password %>">
+                                            <!-- <input type="password" name="password" class="form-control" id="yourPassword" required> -->
+                                            <div class="invalid-feedback">Please enter your password!</div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label for="confirmPassword" class="form-label">confirm Password</label>
+                                            <input class="form-control" type="password" name="confirmPassword" placeholder=" confirm Password " value="<%= lastInput.confirmPassword %>">
+                                            <div class="invalid-feedback">Please enter your password again!</div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required>
+                                                <label class="form-check-label" for="acceptTerms">I agree and accept the <a href="#">terms and conditions</a></label>
+                                                <div class="invalid-feedback">You must agree before submitting.</div>
                                             </div>
                                         </div>
-                                        <div class="single-form form-default">
-                                            <label>password</label>
-                                            <div class="form-input">
-                                                <input type="password" name="password" placeholder="password " value="<%= lastInput.password %>">
-                                                <i class="mdi mdi-email"></i>
-                                            </div>
+                                        <div class="col-12">
+                                            <button class="btn btn-primary w-100" type="submit">Create Account</button>
                                         </div>
-                                        <div class="single-form form-default">
-                                            <label>confirm Password</label>
-                                            <div class="form-input">
-                                                <input type="password" name="confirmPassword" placeholder=" confirm Password " value="<%= lastInput.confirmPassword %>">
-                                                <i class="mdi mdi-lock"></i>
-                                                <span toggle="#password-9" class="mdi mdi-eye-outline toggle-password"></span>
-                                            </div>
-                                        </div>
-                                        <div class="single-checkbox checkbox-style-3">
-                                            <input type="checkbox" id="login-11">
-                                            <label for="login-11"><span></span> </label>
-                                            <p>I accept the Terrms of Use and Privacy Policy.</p>
-                                        </div>
-                                        <div class="single-form">
-                                            <button type="submit" class="main-btn primary-btn">Signup</button>
+                                        <div class="col-12">
+                                            <p class="small mb-0">Already have an account? <a href="pages-login.html">Log in</a></p>
                                         </div>
                                     </form>
-                                </div>
-                                <div class="col-md-5">
-                                    <p class="account">Login with Social Account</p>
-                                    <ul>
-                                        <li>
-                                            <a href="#0" class="facebook-login-registration"><i class="lni lni-facebook-original"></i>
-                                                <span>Login with Facebook</span></a>
-                                        </li>
-                                        <li>
-                                            <a href="#0" class="google-login-registration"><img src="assets/images/google-logo.svg" alt="">
-                                                <span>Login with Google</span></a>
-                                        </li>
-                                    </ul>
-                                    <p class="login">
-                                        Haven’t an account? <a href="#0">Log in</a>
-                                    </p>
+
                                 </div>
                             </div>
+
+                            <div class="credits">
+                                <!-- All the links in the footer should remain intact. -->
+                                <!-- You can delete the links only if you purchased the pro version. -->
+                                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+                                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
-            </div>
+
+            </section>
+
         </div>
-    </main>
-    <%- include('../includes/footer.ejs') %>
+    </main><!-- End #main -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="https://bootstrapmade.com/vendors/apexcharts/apexcharts.min.js"></script>
+    <script src="https://bootstrapmade.com/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://bootstrapmade.com/vendors/chart.js/chart.umd.js"></script>
+    <script src="https://bootstrapmade.com/vendors/echarts/echarts.min.js"></script>
+    <script src="https://bootstrapmade.com/vendors/quill/quill.js"></script>
+    <script src="https://bootstrapmade.com/vendors/simple-datatables/simple-datatables.js"></script>
+    <script src="https://bootstrapmade.com/vendors/tinymce/tinymce.min.js"></script>
+    <script src="https://bootstrapmade.com/vendors/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"8f6acebf6d628c4f","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2024.10.5","token":"68c5ca450bae485a842ff76066d69420"}' crossorigin="anonymous"></script>
+</body>
+
+</html>
