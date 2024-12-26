@@ -1,1 +1,61 @@
-test
+<!-- ======= Header ======= -->
+<%- include('../includes/header.ejs') %>
+    <!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <%- include('../includes/sidebar.ejs') %>
+        <!-- End Sidebar-->
+
+        <main id="main" class="main h-75">
+
+            <div class="pagetitle">
+                <h1>Products</h1>
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item">Products</li>
+                        <li class="breadcrumb-item active">All Products</li>
+                    </ol>
+                </nav>
+            </div>
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (productsArray.length> 0) { %>
+                        <% for (let product of productsArray) { %>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>
+                                    <%= product.title %>
+                                </td>
+                                <td>
+                                    <%= product.price %>
+                                </td>
+                                <td>
+                                    <a href="/admin/edit-admin">Edit</a>
+                                    <form method="post" action="/admin/delete-product">
+                                        <button type="submit">Delete</>
+                                            <input type="hidden" name="productId" value="<%= product._id %>">
+                                    </form>
+                                </td>
+                            </tr>
+                            <% } %>
+                                <% } else { %>
+                                    <p>Not exists</p>
+                                    <% } %>
+                </tbody>
+            </table>
+
+        </main><!-- End #main -->
+
+        <!-- ======= Footer ======= -->
+        <%- include('../includes/footer.ejs') %>
+            <!-- End Footer -->

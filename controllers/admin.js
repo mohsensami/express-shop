@@ -40,7 +40,7 @@ module.exports.sendProducts = (req, res) => {
 
 module.exports.getProducts = (req, res) => {
     Product.find({ userId: req.user._id }).then((products) => {
-        res.render('admin/products', {
+        res.render('admin/products/all-products', {
             pageTitle: 'Admin Products',
             productsArray: products,
             isAuth: req.session.isLoggedIn,
