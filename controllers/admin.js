@@ -11,7 +11,7 @@ module.exports.getDashboard = (req, res) => {
 };
 
 module.exports.addProductPage = (req, res) => {
-    res.render('admin/add-product', {
+    res.render('admin/products/add-product', {
         pageTitle: 'Add Product',
         isAuth: req.session.isLoggedIn,
     });
