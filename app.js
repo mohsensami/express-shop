@@ -42,7 +42,7 @@ const fileFilter = (req, file, cb) => {
 };
 
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(multer({ storage: fileStorage, fileFilter: fileFilter }).single('image'));
+app.use(multer({ storage: fileStorage }).single('image'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use(
@@ -81,10 +81,8 @@ let dbUri;
 // if(process.env)
 // console.log(process.env.NODE_ENV);
 
-const connectionURL =
-    process.env.NODE_ENV == 'dev'
-        ? 'mongodb://127.0.0.1:27017/Shop'
-        : 'mongodb+srv://user:123456sSa@cluster0.t1qcp.mongodb.net/Shop?retryWrites=true&w=majority&appName=Cluster0';
+const connectionURL = 'mongodb://127.0.0.1:27017/Shop';
+// : 'mongodb+srv://user:123456sSa@cluster0.t1qcp.mongodb.net/Shop?retryWrites=true&w=majority&appName=Cluster0';
 
 mongoose
     .connect(connectionURL, {})
