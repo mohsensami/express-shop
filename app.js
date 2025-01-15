@@ -16,6 +16,8 @@ const shopRoutes = require('./routes/shop');
 const authRoutes = require('./routes/auth');
 
 const app = express();
+const dotenv = require('dotenv');
+dotenv.config();
 const store = new MongoDBStore({
     uri: 'mongodb://127.0.0.1:27017/Shop',
     collection: 'session',
@@ -78,11 +80,7 @@ app.use((req, res) => {
 
 let dbUri;
 
-// if(process.env)
-// console.log(process.env.NODE_ENV);
-
-const connectionURL = 'mongodb://127.0.0.1:27017/Shop';
-// : 'mongodb+srv://user:123456sSa@cluster0.t1qcp.mongodb.net/Shop?retryWrites=true&w=majority&appName=Cluster0';
+const connectionURL = process.env.connectionURL;
 
 mongoose
     .connect(connectionURL, {})
@@ -92,3 +90,5 @@ mongoose
     .catch((err) => {
         console.log(err);
     });
+
+// : 'mongodb+srv://user:123456sSa@cluster0.t1qcp.mongodb.net/Shop?retryWrites=true&w=majority&appName=Cluster0';
