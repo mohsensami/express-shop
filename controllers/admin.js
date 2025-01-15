@@ -53,7 +53,7 @@ module.exports.deleteProduct = (req, res) => {
     Product.deleteOne({ _id: pId, userId: req.user._id })
         .then(() => {
             console.log('Product Deleted');
-            res.redirect('/admin/add-product');
+            res.redirect('/admin/products');
         })
         .catch((err) => console.log(err));
 };
