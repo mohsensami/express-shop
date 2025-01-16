@@ -19,7 +19,7 @@ const app = express();
 const dotenv = require('dotenv');
 dotenv.config();
 const store = new MongoDBStore({
-    uri: 'mongodb://127.0.0.1:27017/Shop',
+    uri: process.env.connectionURL,
     collection: 'session',
 });
 
