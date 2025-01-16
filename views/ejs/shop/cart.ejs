@@ -1,18 +1,36 @@
 <%- include('../includes/header.ejs') %>
     <main class="content">
-        <h1 class="page-title">
-            <%= pageTitle %>
-        </h1>
-        <% if (products.length> 0) { %>
-            <ul>
-                <% products.forEach(p=> { %>
-                    <li>
-                        <%= p.productId.title %>
-                    </li>
-                    <% }) %>
-            </ul>
-            <% } else { %>
-                <p>سبد خرید خالی است</p>
-                <% } %>
+
+        <div class="container">
+            <h1 class="page-title">
+                <%= pageTitle %>
+            </h1>
+            <div class="col-lg-4 col-sm-6">
+                <% if (products.length> 0) { %>
+                    <ul>
+                        <% products.forEach(product=> { %>
+                            <div class="product-style-4 mt-30">
+                                <div class="product-image">
+                                    <div class="product-item active">
+                                        <img src="/<%= product.productId.image %>" alt=<%=product.productId.title %>>
+                                    </div>
+                                    <a class="add-wishlist" href="#0">
+                                        <i class="mdi mdi-heart"></i>
+                                    </a>
+                                </div>
+                                <div class="product-content">
+                                    <h4 class="title"><a href="/products/<%= product.productId._id %>">
+                                            <%= product.productId.title %>
+                                        </a></h4>
+                                </div>
+                            </div>
+                            <% }) %>
+                    </ul>
+                    <% } else { %>
+                        <p>سبد خرید خالی است</p>
+                        <% } %>
+            </div>
+        </div>
+
     </main>
     <%- include('../includes/footer.ejs') %>
