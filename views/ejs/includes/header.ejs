@@ -109,7 +109,9 @@
                                                     <a href="#0"><i class="lni lni-user"></i>Notifications</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#0"><i class="lni lni-exit"></i> Logout</a>
+                                                    <form action="/logout" method="POST" class="logout-form">
+                                                        <button class="logout" type="submit"><i class="lni lni-exit"></i> Logout </button>
+                                                    </form>
                                                 </li>
                                             </ul>
                                         </div>
@@ -117,7 +119,7 @@
                                     <li>
                                         <!-- navbar cart start -->
                                         <div class="navbar-cart d-none d-lg-block">
-                                            <a class="icon-btn primary-icon-text icon-text-btn" href="#0"><img src="/img/cart-1.svg" alt="Icon"><span class="icon-text text-style-1">88</span></a>
+                                            <a class="icon-btn primary-icon-text icon-text-btn" href="/cart"><img src="/img/cart-1.svg" alt="Icon"><span class="icon-text text-style-1">88</span></a>
 
                                             <div class="navbar-cart-dropdown">
                                                 <div class="checkout-style-2 text-left">
@@ -489,9 +491,7 @@
                                     <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
                                     <%} else { %>
                                         <li>
-                                            <form action="/logout" method="POST" class="logout-form">
-                                                <button type="submit"> Logout </button>
-                                            </form>
+
                                         </li>
                                         <% } %>
 

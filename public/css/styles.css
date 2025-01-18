@@ -39079,3 +39079,10 @@ select:focus {
         right: auto;
     }
 }
+
+.logout {
+    width: 100%;
+    border: 0;
+    padding: 10px 0;
+    background: #ff00003d;
+}
