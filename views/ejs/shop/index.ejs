@@ -23,7 +23,7 @@
                                             <%= product.title %>
                                         </a></h4>
                                     <p>
-                                        <%= product.description %>
+                                        <%= product.description.substring(0,150) + "..." %>
                                     </p>
                                     <div class="product-price-cart">
                                         <span class="price">$ <%= product.price %></span>
