@@ -62,6 +62,13 @@ module.exports.postCart = (req, res) => {
         });
 };
 
+module.exports.search = (req, res) => {
+    res.render('shop/search', {
+        pageTitle: 'Search',
+        isAuth: req.session.isLoggedIn,
+    });
+};
+
 // module.exports.getOrders = (req, res) => {
 //     res.render('shop/orders', {
 //         pageTitle: 'Orders',

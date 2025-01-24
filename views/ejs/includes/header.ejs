@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/styles.css">
     <!--====== Line Icons CSS ======-->
-    <link rel="stylesheet" href="./css/LineIcons.css" />
+    <link rel="stylesheet" href="/css/LineIcons.css" />
     <!--====== Material Design Icons CSS ======-->
     <!-- <link rel="stylesheet" href="https://demo.ecommercehtml.com/assets/css/materialdesignicons.min.css" /> -->
 </head>
@@ -43,26 +43,28 @@
                                 <!-- desktop logo Ends -->
 
                                 <!-- navbar search start -->
-                                <div class="navbar-search search-style-5 d-none d-lg-flex">
-                                    <div class="search-select">
-                                        <div class="select-position">
-                                            <select id="select20">
-                                                <option value="" selected="">All</option>
-                                                <option value="1">option 01</option>
-                                                <option value="2">option 02</option>
-                                                <option value="3">option 03</option>
-                                                <option value="4">option 04</option>
-                                                <option value="5">option 05</option>
-                                            </select>
+                                <form action="/search" method="get">
+                                    <div class="navbar-search search-style-5 d-none d-lg-flex">
+                                        <div class="search-select">
+                                            <div class="select-position">
+                                                <select id="select20">
+                                                    <option value="" selected="">All</option>
+                                                    <option value="1">option 01</option>
+                                                    <option value="2">option 02</option>
+                                                    <option value="3">option 03</option>
+                                                    <option value="4">option 04</option>
+                                                    <option value="5">option 05</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="search-input">
+                                            <input name="q" type="text" placeholder="Search">
+                                        </div>
+                                        <div class="search-btn">
+                                            <button><i class="lni lni-search-alt"></i></button>
                                         </div>
                                     </div>
-                                    <div class="search-input">
-                                        <input type="text" placeholder="Search">
-                                    </div>
-                                    <div class="search-btn">
-                                        <button><i class="lni lni-search-alt"></i></button>
-                                    </div>
-                                </div>
+                                </form>
                                 <!-- navbar search Ends -->
                             </div>
                             <!-- navbar top left Ends -->
@@ -120,7 +122,7 @@
                                             </div>
                                         </li>
                                         <%} else { %>
-                                            <a class="icon-btn primary-icon-text icon-text-btn" href="/login" role="button"><i class="lni lni-enter"></i></a>
+                                            <a class="main-btn primary-btn" href="#0">Login</a>
                                             <% } %>
                                                 <li>
                                                     <!-- navbar cart start -->
