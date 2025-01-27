@@ -1,9 +1,29 @@
 <%- include('../includes/header.ejs') %>
     <main class="content">
-        <h1 class="page-title">
-            <%= pageTitle %>
-        </h1>
+        <div class="container mx-auto p-5">
+            <h1 class="text-3xl font-bold mb-5">
+                <%= pageTitle %>
+            </h1>
 
-
+            <% if (results && results.length> 0) { %>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <% results.forEach(result=> { %>
+                        <div class="bg-white p-4 rounded-lg shadow-md">
+                            <img src="<%= result.image %>" alt="<%= result.title %>" class="rounded-lg mb-4">
+                            <h2 class="text-xl font-semibold">
+                                <%= result.title %>
+                            </h2>
+                            <p class="text-sm text-gray-600 mb-2">
+                                <%= result.description %>
+                            </p>
+                            <p class="text-lg font-bold text-blue-600">$<%= result.price %>
+                            </p>
+                        </div>
+                        <% }) %>
+                </div>
+                <% } else { %>
+                    <p class="text-gray-600">No results found.</p>
+                    <% } %>
+        </div>
     </main>
     <%- include('../includes/footer.ejs') %>

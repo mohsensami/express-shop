@@ -62,11 +62,32 @@ module.exports.postCart = (req, res) => {
         });
 };
 
-module.exports.search = (req, res) => {
-    res.render('shop/search', {
-        pageTitle: 'Search',
-        isAuth: req.session.isLoggedIn,
-    });
+module.exports.search = async (req, res) => {
+    try {
+        const query = req.query.q; // Get the 'q' parameter from the URL
+
+        if (!query) {
+            return res.status(400).json({ message: 'Query parameter "q" is required.' });
+        }
+
+        // Search for products where title matches the query (case-insensitive)
+        const results = await Product.find({
+            title: { $regex: query, $options: 'i' }, // 'i' makes it case-insensitive
+        });
+
+        console.log(results);
+
+        // Respond with the search results
+        res.render('shop/search', {
+            pageTitle: query,
+            isAuth: req.session.isLoggedIn,
+            results,
+        });
+        // res.status(200).json({ results });
+    } catch (error) {
+        console.error('Error searching products:', error);
+        res.status(500).json({ message: 'Internal server error.' });
+    }
 };
 
 // module.exports.getOrders = (req, res) => {
