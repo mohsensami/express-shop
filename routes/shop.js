@@ -1,23 +1,25 @@
 // const path = require('path');
 
-const express = require('express');
+const express = require("express");
 
-const shopControllers = require('../controllers/shop');
-const isAuth = require('../middleware/is-auth');
+const shopControllers = require("../controllers/shop");
+const isAuth = require("../middleware/is-auth");
 
 const router = express.Router();
 
-router.get('/', shopControllers.getIndex);
+router.get("/", shopControllers.getIndex);
 
-router.get('/products', shopControllers.getAllProducts);
+router.get("/products", shopControllers.getAllProducts);
 
-router.get('/products/:productId', shopControllers.getOneProduct);
+router.get("/products/:productId", shopControllers.getOneProduct);
 
-router.get('/cart', isAuth, shopControllers.getCart);
+router.get("/cart", isAuth, shopControllers.getCart);
 
-router.post('/cart', isAuth, shopControllers.postCart);
+router.post("/cart", isAuth, shopControllers.postCart);
 
-router.get('/search', shopControllers.search);
+router.get("/search", shopControllers.search);
+
+router.use(shopControllers.globalDataMiddleware);
 
 // router.get('/orders', shopControllers.getOrders);
 
