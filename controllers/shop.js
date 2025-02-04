@@ -93,14 +93,13 @@ module.exports.search = async (req, res) => {
 };
 
 // Middleware to add global data (e.g., settings) to every request
-module.exports.globalDataMiddleware = async (req, res, next) => {
+exports.globalDataMiddleware = async (req, res, next) => {
   req.user
     .populate("cart.items.productId")
     // .execPopulate()
     .then((user) => {
-      const products = user.cart.items;
-      console.log(products);
-      res.locals.globalData = products; // Make available in all views
+      const productsHeader = user.cart.items;
+      res.locals.globalData = productsHeader; // Make available in all views
       next();
     })
     .catch((err) => {

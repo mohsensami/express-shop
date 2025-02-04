@@ -1,78 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <%= pageTitle %>
-    </title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= pageTitle %></title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!--====== Favicon Icon ======-->
     <link rel="shortcut icon" href="/img/favicon.png" type="image/png" />
-    <link rel="stylesheet" href="/css/default.css">
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/default.css" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
     <!--====== Line Icons CSS ======-->
     <link rel="stylesheet" href="/css/LineIcons.css" />
     <!--====== Material Design Icons CSS ======-->
     <!-- <link rel="stylesheet" href="https://demo.ecommercehtml.com/assets/css/materialdesignicons.min.css" /> -->
-</head>
+  </head>
 
-<body>
-    <header class="menu-style-6 position-relative ">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-12 position-static">
-                    <div class="navbar-container navbar-sidebar-6">
-                        <!-- navbar top Start -->
-                        <div class="navbar-top d-flex align-items-center">
-                            <!-- navbar top left Start -->
-                            <div class="
-                      navbar-top-left
-                      d-lg-flex
-                      flex-wrap
-                      align-items-center
-                    ">
-                                <!-- desktop logo Start -->
-                                <div class="desktop-logo">
-                                    <a href="/"><img src="/img/logo.svg" alt="Logo"></a>
-                                </div>
-                                <!-- desktop logo Ends -->
+  <body>
+    <header class="menu-style-6 position-relative">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-12 position-static">
+            <div class="navbar-container navbar-sidebar-6">
+              <!-- navbar top Start -->
+              <div class="navbar-top d-flex align-items-center">
+                <!-- navbar top left Start -->
+                <div
+                  class="navbar-top-left d-lg-flex flex-wrap align-items-center"
+                >
+                  <!-- desktop logo Start -->
+                  <div class="desktop-logo">
+                    <a href="/"><img src="/img/logo.svg" alt="Logo" /></a>
+                  </div>
+                  <!-- desktop logo Ends -->
 
-                                <!-- navbar search start -->
-                                <form action="/search" method="get">
-                                    <div class="navbar-search search-style-5 d-none d-lg-flex">
-                                        <div class="search-select">
-                                            <div class="select-position">
-                                                <select id="select20">
-                                                    <option value="" selected="">All</option>
-                                                    <option value="1">option 01</option>
-                                                    <option value="2">option 02</option>
-                                                    <option value="3">option 03</option>
-                                                    <option value="4">option 04</option>
-                                                    <option value="5">option 05</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="search-input">
-                                            <input name="q" type="text" placeholder="Search">
-                                        </div>
-                                        <div class="search-btn">
-                                            <button><i class="lni lni-search-alt"></i></button>
-                                        </div>
-                                    </div>
-                                </form>
-                                <!-- navbar search Ends -->
-                            </div>
-                            <!-- navbar top left Ends -->
+                  <!-- navbar search start -->
+                  <form action="/search" method="get">
+                    <div class="navbar-search search-style-5 d-none d-lg-flex">
+                      <div class="search-select">
+                        <div class="select-position">
+                          <select id="select20">
+                            <option value="" selected="">All</option>
+                            <option value="1">option 01</option>
+                            <option value="2">option 02</option>
+                            <option value="3">option 03</option>
+                            <option value="4">option 04</option>
+                            <option value="5">option 05</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="search-input">
+                        <input name="q" type="text" placeholder="Search" />
+                      </div>
+                      <div class="search-btn">
+                        <button><i class="lni lni-search-alt"></i></button>
+                      </div>
+                    </div>
+                  </form>
+                  <!-- navbar search Ends -->
+                </div>
+                <!-- navbar top left Ends -->
 
-                            <!-- navbar top right Start -->
-                            <div class="navbar-top-right text-center text-lg-end">
-                                <ul class="navbar-top-link">
-                                    <!-- <li>
+                <!-- navbar top right Start -->
+                <div class="navbar-top-right text-center text-lg-end">
+                  <ul class="navbar-top-link">
+                    <!-- <li>
                                         <div class="select-position">
                                             <select id="select21">
                                                 <option value="0" selected="">$ USD</option>
@@ -84,7 +78,7 @@
                                             </select>
                                         </div>
                                     </li> -->
-                                    <!-- <li>
+                    <!-- <li>
                                         <div class="select-position">
                                             <select id="select22">
                                                 <option value="0" selected="">English</option>
@@ -97,541 +91,615 @@
                                             </select>
                                         </div>
                                     </li> -->
-                                    <% if (isAuth) { %>
-                                        <li>
-                                            <div class="navbar-user dropdown">
-                                                <a class="icon-btn primary-icon-text icon-text-btn" href="#dropdownProfile" role="button" data-bs-toggle="dropdown"><i class="lni lni-user"></i></a>
-                                                <ul class="dropdown-menu" id="dropdownProfile">
-                                                    <li>
-                                                        <a href="#0"><i class="lni lni-user"></i> My Profile</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#0"><i class="lni lni-user"></i> Settings</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#0"><i class="lni lni-user"></i>Notifications</a>
-                                                    </li>
+                    <% if (isAuth) { %>
+                    <li>
+                      <div class="navbar-user dropdown">
+                        <a
+                          class="icon-btn primary-icon-text icon-text-btn"
+                          href="#dropdownProfile"
+                          role="button"
+                          data-bs-toggle="dropdown"
+                          ><i class="lni lni-user"></i
+                        ></a>
+                        <ul class="dropdown-menu" id="dropdownProfile">
+                          <li>
+                            <a href="#0"
+                              ><i class="lni lni-user"></i> My Profile</a
+                            >
+                          </li>
+                          <li>
+                            <a href="#0"
+                              ><i class="lni lni-user"></i> Settings</a
+                            >
+                          </li>
+                          <li>
+                            <a href="#0"
+                              ><i class="lni lni-user"></i>Notifications</a
+                            >
+                          </li>
 
-                                                    <li>
-                                                        <form action="/logout" method="POST" class="logout-form">
-                                                            <button class="logout" type="submit"><i class="lni lni-exit"></i> Logout </button>
-                                                        </form>
-                                                    </li>
+                          <li>
+                            <form
+                              action="/logout"
+                              method="POST"
+                              class="logout-form"
+                            >
+                              <button class="logout" type="submit">
+                                <i class="lni lni-exit"></i> Logout
+                              </button>
+                            </form>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <%} else { %>
+                    <a class="main-btn primary-btn" href="#0">Login</a>
+                    <% } %>
+                    <li>
+                      <!-- navbar cart start -->
+                      <div class="navbar-cart d-none d-lg-block">
+                        <a
+                          class="icon-btn primary-icon-text icon-text-btn"
+                          href="/cart"
+                          ><img src="/img/cart-1.svg" alt="Icon" /><span
+                            class="icon-text text-style-1"
+                            >88</span
+                          ></a
+                        >
 
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <%} else { %>
-                                            <a class="main-btn primary-btn" href="#0">Login</a>
-                                            <% } %>
-                                                <li>
-                                                    <!-- navbar cart start -->
-                                                    <div class="navbar-cart d-none d-lg-block">
-                                                        <a class="icon-btn primary-icon-text icon-text-btn" href="/cart"><img src="/img/cart-1.svg" alt="Icon"><span class="icon-text text-style-1">88</span></a>
-
-                                                        <div class="navbar-cart-dropdown">
-                                                            <div class="checkout-style-2 text-left">
-                                                                <div class="
-                                  checkout-header
-                                  d-flex
-                                  justify-content-between
-                                ">
-                                                                    <h6 class="title">Shopping Cart</h6>
-                                                                </div>
-
-                                                                <div class="checkout-table">
-                                                                    <table class="table">
-                                                                        <tbody>
-                                                                            <tr>
-                                                                                <td class="checkout-product">
-                                                                                    <div class="product-cart d-flex">
-                                                                                        <div class="product-thumb">
-                                                                                            <img src="img/product-1.png" alt="Product">
-                                                                                        </div>
-                                                                                        <div class="product-content media-body">
-                                                                                            <h5 class="title">
-                                                                                                <a href="#0">Hollow Port</a>
-                                                                                            </h5>
-                                                                                            <ul>
-                                                                                                <li><span>Brown</span></li>
-                                                                                                <li><span>XL</span></li>
-                                                                                                <li>
-                                                                                                    <a class="delete" href="#0"><i class="mdi mdi-delete"></i></a>
-                                                                                                </li>
-                                                                                            </ul>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </td>
-                                                                                <td class="checkout-quantity">
-                                                                                    <div class="product-quantity d-inline-flex">
-                                                                                        <button type="button" id="sub" class="sub">
-                                                                                            <i class="mdi mdi-minus"></i>
-                                                                                        </button>
-                                                                                        <input type="text" value="1">
-                                                                                        <button type="button" id="add" class="add">
-                                                                                            <i class="mdi mdi-plus"></i>
-                                                                                        </button>
-                                                                                    </div>
-                                                                                </td>
-                                                                                <td class="checkout-price">
-                                                                                    <p class="price">$36.00</p>
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td class="checkout-product">
-                                                                                    <div class="product-cart d-flex">
-                                                                                        <div class="product-thumb">
-                                                                                            <img src="img/product-2.png" alt="Product">
-                                                                                        </div>
-                                                                                        <div class="product-content media-body">
-                                                                                            <h5 class="title">
-                                                                                                <a href="#0">Mist Black Triblend</a>
-                                                                                            </h5>
-                                                                                            <ul>
-                                                                                                <li><span>Brown</span></li>
-                                                                                                <li><span>XL</span></li>
-                                                                                                <li>
-                                                                                                    <a class="delete" href="#0"><i class="mdi mdi-delete"></i></a>
-                                                                                                </li>
-                                                                                            </ul>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </td>
-                                                                                <td class="checkout-quantity">
-                                                                                    <div class="product-quantity d-inline-flex">
-                                                                                        <button type="button" id="sub" class="sub">
-                                                                                            <i class="mdi mdi-minus"></i>
-                                                                                        </button>
-                                                                                        <input type="text" value="1">
-                                                                                        <button type="button" id="add" class="add">
-                                                                                            <i class="mdi mdi-plus"></i>
-                                                                                        </button>
-                                                                                    </div>
-                                                                                </td>
-                                                                                <td class="checkout-price">
-                                                                                    <p class="price">$36.00</p>
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td class="checkout-product">
-                                                                                    <div class="product-cart d-flex">
-                                                                                        <div class="product-thumb">
-                                                                                            <img src="img/product-3.png" alt="Product">
-                                                                                        </div>
-                                                                                        <div class="product-content media-body">
-                                                                                            <h5 class="title">
-                                                                                                <a href="#0">Realm Bone</a>
-                                                                                            </h5>
-                                                                                            <ul>
-                                                                                                <li><span>Brown</span></li>
-                                                                                                <li><span>XL</span></li>
-                                                                                                <li>
-                                                                                                    <a class="delete" href="#0"><i class="mdi mdi-delete"></i></a>
-                                                                                                </li>
-                                                                                            </ul>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </td>
-                                                                                <td class="checkout-quantity">
-                                                                                    <div class="product-quantity d-inline-flex">
-                                                                                        <button type="button" id="sub" class="sub">
-                                                                                            <i class="mdi mdi-minus"></i>
-                                                                                        </button>
-                                                                                        <input type="text" value="1">
-                                                                                        <button type="button" id="add" class="add">
-                                                                                            <i class="mdi mdi-plus"></i>
-                                                                                        </button>
-                                                                                    </div>
-                                                                                </td>
-                                                                                <td class="checkout-price">
-                                                                                    <p class="price">$36.00</p>
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td class="checkout-product">
-                                                                                    <div class="product-cart d-flex">
-                                                                                        <div class="product-thumb">
-                                                                                            <img src="img/product-4.png" alt="Product">
-                                                                                        </div>
-                                                                                        <div class="product-content media-body">
-                                                                                            <h5 class="title">
-                                                                                                <a href="#0">Circular Sienna</a>
-                                                                                            </h5>
-                                                                                            <ul>
-                                                                                                <li><span>Brown</span></li>
-                                                                                                <li><span>XL</span></li>
-                                                                                                <li>
-                                                                                                    <a class="delete" href="#0"><i class="mdi mdi-delete"></i></a>
-                                                                                                </li>
-                                                                                            </ul>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </td>
-                                                                                <td class="checkout-quantity">
-                                                                                    <div class="product-quantity d-inline-flex">
-                                                                                        <button type="button" id="sub" class="sub">
-                                                                                            <i class="mdi mdi-minus"></i>
-                                                                                        </button>
-                                                                                        <input type="text" value="1">
-                                                                                        <button type="button" id="add" class="add">
-                                                                                            <i class="mdi mdi-plus"></i>
-                                                                                        </button>
-                                                                                    </div>
-                                                                                </td>
-                                                                                <td class="checkout-price">
-                                                                                    <p class="price">$36.00</p>
-                                                                                </td>
-                                                                            </tr>
-                                                                        </tbody>
-                                                                    </table>
-                                                                </div>
-
-                                                                <div class="checkout-footer">
-                                                                    <div class="
-                                    checkout-sub-total
-                                    d-flex
-                                    justify-content-between
-                                  ">
-                                                                        <p class="value">Subotal Price:</p>
-                                                                        <p class="price">$144</p>
-                                                                    </div>
-                                                                    <div class="checkout-btn">
-                                                                        <a href="#0" class="main-btn primary-btn-border">View Cart</a>
-                                                                        <a href="#0" class="main-btn primary-btn">Checkout</a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- navbar cart Ends -->
-                                                </li>
-                                </ul>
+                        <div class="navbar-cart-dropdown">
+                          <div class="checkout-style-2 text-left">
+                            <div
+                              class="checkout-header d-flex justify-content-between"
+                            >
+                              <h6 class="title">Shopping Cart</h6>
                             </div>
-                            <!-- navbar top right Ends -->
+
+                            <div class="checkout-table">
+                              <table class="table">
+                                <tbody>
+                                  <% if ([].length > 0) { %> <% for (let product
+                                  of []) { %>
+
+                                  <tr>
+                                    <td class="checkout-product">
+                                      <div class="product-cart d-flex">
+                                        <div class="product-thumb">
+                                          <img
+                                            src="img/product-1.png"
+                                            alt="Product"
+                                          />
+                                        </div>
+                                        <div class="product-content media-body">
+                                          <h5 class="title">
+                                            <a href="#0">Hollow Port</a>
+                                          </h5>
+                                          <ul>
+                                            <li><span>Brown</span></li>
+                                            <li><span>XL</span></li>
+                                            <li>
+                                              <a class="delete" href="#0"
+                                                ><i class="mdi mdi-delete"></i
+                                              ></a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </td>
+                                    <td class="checkout-quantity">
+                                      <div
+                                        class="product-quantity d-inline-flex"
+                                      >
+                                        <button
+                                          type="button"
+                                          id="sub"
+                                          class="sub"
+                                        >
+                                          <i class="mdi mdi-minus"></i>
+                                        </button>
+                                        <input type="text" value="1" />
+                                        <button
+                                          type="button"
+                                          id="add"
+                                          class="add"
+                                        >
+                                          <i class="mdi mdi-plus"></i>
+                                        </button>
+                                      </div>
+                                    </td>
+                                    <td class="checkout-price">
+                                      <p class="price">$36.00</p>
+                                    </td>
+                                  </tr>
+
+                                  <% } %> <% } else { %>
+                                  <p>Not exists</p>
+                                  <% } %>
+                                </tbody>
+                              </table>
+                            </div>
+
+                            <div class="checkout-footer">
+                              <div
+                                class="checkout-sub-total d-flex justify-content-between"
+                              >
+                                <p class="value">Subotal Price:</p>
+                                <p class="price">$144</p>
+                              </div>
+                              <div class="checkout-btn">
+                                <a href="#0" class="main-btn primary-btn-border"
+                                  >View Cart</a
+                                >
+                                <a href="#0" class="main-btn primary-btn"
+                                  >Checkout</a
+                                >
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <!-- navbar top Ends -->
-
-                        <!-- main navbar Start -->
-                        <nav class="main-navbar d-lg-flex align-items-center">
-                            <!-- navbar menu Start -->
-                            <div class="navbar-menu">
-                                <div class="navbar-menu-toggle d-lg-block">
-                                    <button id="toggle-menu-6" class="menu-toggle collapsed" data-bs-toggle="collapse" data-bs-target="#menuVertical6-1" aria-controls="menuVertical6-1" aria-expanded="false" aria-label="Toggle navigation">
-                                        <span class="toggle-icon"></span>
-                                        <span class="toggle-icon"></span>
-                                        <span class="toggle-icon"></span>
-                                    </button>
-                                </div>
-
-                                <ul class="main-menu menu-vertical-6 collapse" id="menuVertical6-1" style="">
-                                    <li class="menu-item-has-children">
-                                        <a href="#0" class="collapsed" data-bs-toggle="collapse" data-bs-target="#menuVertical6-2" aria-controls="menuVertical6-2" aria-expanded="false" aria-label="Toggle navigation">Arts &amp; Crafts <i class="mdi mdi-chevron-right"></i></a>
-
-                                        <!-- sub mega dropdown Start -->
-                                        <ul class="sub-mega-dropdown collapse" id="menuVertical6-2">
-                                            <li>
-                                                <div class="mega-dropdown-menu">
-                                                    <ul class="container mega-dropdown d-flex flex-wrap">
-                                                        <li class="
-                                    mega-dropdown-list
-                                    menu-item-has-children
-                                  ">
-                                                            <h6 class="
-                                      heading-6
-                                      font-weight-500
-                                      mega-title
-                                      collapsed
-                                    " data-bs-toggle="collapse" data-bs-target="#menuVertical6-3" aria-controls="menuVertical6-3" aria-expanded="false" aria-label="Toggle navigation">
-                                                                New Arrivals
-                                                                <i class="mdi mdi-chevron-right"></i>
-                                                            </h6>
-                                                            <ul class="collapse" id="menuVertical6-3">
-                                                                <li><a href="#0">Dressess</a></li>
-                                                                <li><a href="#0">Jackets</a></li>
-                                                                <li>
-                                                                    <a href="#0">Hoodies &amp; Sweatshirts</a>
-                                                                </li>
-                                                                <li><a href="#0">Sweaters</a></li>
-                                                                <li><a href="#0">Tops &amp; Tees</a></li>
-                                                                <li><a href="#0">Party Dressess</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="
-                                    mega-dropdown-list
-                                    menu-item-has-children
-                                  ">
-                                                            <h6 class="
-                                      heading-6
-                                      font-weight-500
-                                      mega-title
-                                      collapsed
-                                    " data-bs-toggle="collapse" data-bs-target="#menuVertical6-4" aria-controls="menuVertical6-4" aria-expanded="false" aria-label="Toggle navigation">
-                                                                Trending
-                                                                <i class="mdi mdi-chevron-right"></i>
-                                                            </h6>
-                                                            <ul class="collapse" id="menuVertical6-4">
-                                                                <li><a href="#0">Dressess</a></li>
-                                                                <li><a href="#0">Jackets</a></li>
-                                                                <li>
-                                                                    <a href="#0">Hoodies &amp; Sweatshirts</a>
-                                                                </li>
-                                                                <li><a href="#0">Sweaters</a></li>
-                                                                <li><a href="#0">Tops &amp; Tees</a></li>
-                                                                <li><a href="#0">Party Dressess</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="mega-dropdown-list">
-                                                            <div class="d-md-flex d-lg-block">
-                                                                <div class="menu-image">
-                                                                    <img src="assets/images/menu-1.jpg" alt="">
-                                                                </div>
-                                                                <div class="menu-image">
-                                                                    <img src="assets/images/menu-2.jpg" alt="">
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <!-- sub mega dropdown Ends -->
-                                    </li>
-                                    <li class="menu-item-has-children">
-                                        <a href="#0" class="collapsed" data-bs-toggle="collapse" data-bs-target="#menuVertical6-5" aria-controls="menuVertical6-5" aria-expanded="false" aria-label="Toggle navigation">Fashion <i class="mdi mdi-chevron-right"></i></a>
-
-                                        <!-- sub mega dropdown Start -->
-                                        <ul class="sub-mega-dropdown collapse" id="menuVertical6-5">
-                                            <li>
-                                                <div class="mega-dropdown-menu">
-                                                    <ul class="container mega-dropdown d-flex flex-wrap">
-                                                        <li class="
-                                    mega-dropdown-list
-                                    menu-item-has-children
-                                  ">
-                                                            <h6 class="
-                                      heading-6
-                                      font-weight-500
-                                      mega-title
-                                      collapsed
-                                    " data-bs-toggle="collapse" data-bs-target="#menuVertical6-6" aria-controls="menuVertical6-6" aria-expanded="false" aria-label="Toggle navigation">
-                                                                New Arrivals
-                                                                <i class="mdi mdi-chevron-right"></i>
-                                                            </h6>
-                                                            <ul class="collase" id="menuVertical6-6">
-                                                                <li><a href="#0">Dressess</a></li>
-                                                                <li><a href="#0">Jackets</a></li>
-                                                                <li>
-                                                                    <a href="#0">Hoodies &amp; Sweatshirts</a>
-                                                                </li>
-                                                                <li><a href="#0">Sweaters</a></li>
-                                                                <li><a href="#0">Tops &amp; Tees</a></li>
-                                                                <li><a href="#0">Party Dressess</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="
-                                    mega-dropdown-list
-                                    menu-item-has-children
-                                  ">
-                                                            <h6 class="
-                                      heading-6
-                                      font-weight-500
-                                      mega-title
-                                      collapsed
-                                    " data-bs-toggle="collapse" data-bs-target="#menuVertical6-7" aria-controls="menuVertical6-7" aria-expanded="false" aria-label="Toggle navigation">
-                                                                Trending
-                                                                <i class="mdi mdi-chevron-right"></i>
-                                                            </h6>
-                                                            <ul class="collapse" id="menuVertical6-7">
-                                                                <li><a href="#0">Dressess</a></li>
-                                                                <li><a href="#0">Jackets</a></li>
-                                                                <li>
-                                                                    <a href="#0">Hoodies &amp; Sweatshirts</a>
-                                                                </li>
-                                                                <li><a href="#0">Sweaters</a></li>
-                                                                <li><a href="#0">Tops &amp; Tees</a></li>
-                                                                <li><a href="#0">Party Dressess</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="mega-dropdown-list">
-                                                            <div class="d-md-flex d-lg-block">
-                                                                <div class="menu-image">
-                                                                    <img src="assets/images/menu-1.jpg" alt="">
-                                                                </div>
-                                                                <div class="menu-image">
-                                                                    <img src="assets/images/menu-2.jpg" alt="">
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <!-- sub mega dropdown Ends -->
-                                    </li>
-                                    <li>
-                                        <a href="#0">Health &amp; Household
-                                            <i class="mdi mdi-chevron-right"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#0">Bages &amp; Shoes <i class="mdi mdi-chevron-right"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#0">Jewelry &amp; Watchs <i class="mdi mdi-chevron-right"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#0">Beauty &amp; Health <i class="mdi mdi-chevron-right"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#0">Electronics <i class="mdi mdi-chevron-right"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#0">Home &amp; Garden <i class="mdi mdi-chevron-right"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- navbar menu Ends -->
-
-                            <!-- navbar menu Start -->
-                            <ul class="main-menu-horizontal d-none d-lg-flex">
-                                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                                <% if (!isAuth) { %>
-                                    <li class="nav-item"><a class="nav-link" href="/signup">signup</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-                                    <%} else { %>
-                                        <li>
-
-                                        </li>
-                                        <% } %>
-
-
-                                            <li class="nav-item"><a class="nav-link" href="/products">Products</a></li>
-                                            <% if(isAuth){ %>
-                                                <li class="nav-item"><a class="nav-link" href="/checkout">Checkout</a></li>
-                                                <li class="nav-item"><a class="nav-link" href="/cart">Cart</a></li>
-                                                <li class="nav-item"><a class="nav-link" href="/admin/products">Admin Products</a></li>
-                                                <li class="nav-item"><a class="nav-link" href="/admin/add-product">Add Product</a></li>
-                                                <% } %>
-                                                    <li class="nav-item"><a class="nav-link" href="/orders">Orders</a></li>
-                                                    <li class="position-static menu-item-has-children">
-                                                        <a href="#0" class="collapsed" data-bs-toggle="collapse" data-bs-target="#menuVertical6-8" aria-controls="menuVertical6-8" aria-expanded="false" aria-label="Toggle navigation">Womens</a>
-
-                                                        <!-- sub mega dropdown Start -->
-                                                        <ul class="sub-mega-dropdown collapse" id="menuVertical6-8">
-                                                            <li>
-                                                                <div class="mega-dropdown-menu">
-                                                                    <ul class="container mega-dropdown d-flex flex-wrap">
-                                                                        <li class="
-                                  mega-dropdown-list
-                                  menu-item-has-children
-                                ">
-                                                                            <h6 class="
-                                    heading-6
-                                    font-weight-500
-                                    mega-title
-                                    collapsed
-                                  " data-bs-toggle="collapse" data-bs-target="#menuVertical6-9" aria-controls="menuVertical6-9" aria-expanded="false" aria-label="Toggle navigation">
-                                                                                New Arrivals
-                                                                            </h6>
-                                                                            <ul class="collapse" id="menuVertical6-9">
-                                                                                <li><a href="#0">Dressess</a></li>
-                                                                                <li><a href="#0">Jackets</a></li>
-                                                                                <li>
-                                                                                    <a href="#0">Hoodies &amp; Sweatshirts</a>
-                                                                                </li>
-                                                                                <li><a href="#0">Sweaters</a></li>
-                                                                                <li><a href="#0">Tops &amp; Tees</a></li>
-                                                                                <li><a href="#0">Party Dressess</a></li>
-                                                                            </ul>
-                                                                        </li>
-                                                                        <li class="
-                                  mega-dropdown-list
-                                  menu-item-has-children
-                                ">
-                                                                            <h6 class="
-                                    heading-6
-                                    font-weight-500
-                                    mega-title
-                                    collapsed
-                                  " data-bs-toggle="collapse" data-bs-target="#menuVertical6-10" aria-controls="menuVertical6-10" aria-expanded="false" aria-label="Toggle navigation">
-                                                                                Trending
-                                                                            </h6>
-                                                                            <ul class="collapse" id="menuVertical6-10">
-                                                                                <li><a href="#0">Dressess</a></li>
-                                                                                <li><a href="#0">Jackets</a></li>
-                                                                                <li>
-                                                                                    <a href="#0">Hoodies &amp; Sweatshirts</a>
-                                                                                </li>
-                                                                                <li><a href="#0">Sweaters</a></li>
-                                                                                <li><a href="#0">Tops &amp; Tees</a></li>
-                                                                                <li><a href="#0">Party Dressess</a></li>
-                                                                            </ul>
-                                                                        </li>
-                                                                        <li class="
-                                  mega-dropdown-list
-                                  menu-item-has-children
-                                ">
-                                                                            <h6 class="
-                                    heading-6
-                                    font-weight-500
-                                    mega-title
-                                    collapsed
-                                  " data-bs-toggle="collapse" data-bs-target="#menuVertical6-11" aria-controls="menuVertical6-11" aria-expanded="false" aria-label="Toggle navigation">
-                                                                                Accessories
-                                                                            </h6>
-                                                                            <ul class="collapse" id="menuVertical6-11">
-                                                                                <li>
-                                                                                    <a href="#0">Hoodies &amp; Sweatshirts</a>
-                                                                                </li>
-                                                                                <li><a href="#0">Jackets &amp; Coats</a></li>
-                                                                                <li><a href="#0">Pants</a></li>
-                                                                                <li><a href="#0">Jeans</a></li>
-                                                                                <li><a href="#0">Tops &amp; Tees</a></li>
-                                                                                <li><a href="#0">Casual Shorts</a></li>
-                                                                            </ul>
-                                                                        </li>
-                                                                        <li class="mega-dropdown-list">
-                                                                            <img src="assets/images/menu-slider-1.png" alt="">
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                        <!-- sub mega dropdown Ends -->
-                                                    </li>
-                                                    <li class="menu-item-has-children">
-                                                        <a href="#0" class="collapsed" data-bs-toggle="collapse" data-bs-target="#menuVertical6-12" aria-controls="menuVertical6-12" aria-expanded="false" aria-label="Toggle navigation">More</a>
-                                                        <!-- sub menu Start -->
-                                                        <ul class="sub-menu collapse" id="menuVertical6-12">
-                                                            <li><a href="#0">Dropped Menu 1</a></li>
-                                                            <li class="menu-item-has-children">
-                                                                <a href="#0" class="collapsed" data-bs-toggle="collapse" data-bs-target="#menuVertical6-13" aria-controls="menuVertical6-13" aria-expanded="false" aria-label="Toggle navigation">Dropped Menu 2 <i class="mdi mdi-chevron-right"></i></a>
-                                                                <ul class="sub-menu collapse" id="menuVertical6-13">
-                                                                    <li><a href="#0">Sub Dropped Menu 1</a></li>
-                                                                    <li><a href="#0">Sub Dropped Menu 2</a></li>
-                                                                    <li><a href="#0">Sub Dropped Menu 3</a></li>
-                                                                    <li class="menu-item-has-children">
-                                                                        <a href="#0" class="collapsed" data-bs-toggle="collapse" data-bs-target="#menuVertical6-14" aria-controls="menuVertical6-14" aria-expanded="false" aria-label="Toggle navigation">Sub Dropped Menu 4
-                                                                            <i class="mdi mdi-chevron-right"></i></a>
-                                                                        <ul class="sub-menu collapse" id="menuVertical6-14">
-                                                                            <li><a href="#0">Sub Dropped Menu 1</a></li>
-                                                                            <li><a href="#0">Sub Dropped Menu 2</a></li>
-                                                                            <li><a href="#0">Sub Dropped Menu 3</a></li>
-                                                                            <li><a href="#0">Sub Dropped Menu 4</a></li>
-                                                                        </ul>
-                                                                    </li>
-                                                                </ul>
-                                                            </li>
-                                                            <li><a href="#0">Dropped Menu 3</a></li>
-                                                            <li><a href="#0">Dropped Menu 4</a></li>
-                                                        </ul>
-                                                        <!-- sub menu Ends -->
-                                                    </li>
-                            </ul>
-                            <!-- navbar menu Ends -->
-                        </nav>
-                        <!-- main navbar Ends -->
-                    </div>
+                      </div>
+                      <!-- navbar cart Ends -->
+                    </li>
+                  </ul>
                 </div>
+                <!-- navbar top right Ends -->
+              </div>
+              <!-- navbar top Ends -->
+
+              <!-- main navbar Start -->
+              <nav class="main-navbar d-lg-flex align-items-center">
+                <!-- navbar menu Start -->
+                <div class="navbar-menu">
+                  <div class="navbar-menu-toggle d-lg-block">
+                    <button
+                      id="toggle-menu-6"
+                      class="menu-toggle collapsed"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#menuVertical6-1"
+                      aria-controls="menuVertical6-1"
+                      aria-expanded="false"
+                      aria-label="Toggle navigation"
+                    >
+                      <span class="toggle-icon"></span>
+                      <span class="toggle-icon"></span>
+                      <span class="toggle-icon"></span>
+                    </button>
+                  </div>
+
+                  <ul
+                    class="main-menu menu-vertical-6 collapse"
+                    id="menuVertical6-1"
+                    style=""
+                  >
+                    <li class="menu-item-has-children">
+                      <a
+                        href="#0"
+                        class="collapsed"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#menuVertical6-2"
+                        aria-controls="menuVertical6-2"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                        >Arts &amp; Crafts <i class="mdi mdi-chevron-right"></i
+                      ></a>
+
+                      <!-- sub mega dropdown Start -->
+                      <ul
+                        class="sub-mega-dropdown collapse"
+                        id="menuVertical6-2"
+                      >
+                        <li>
+                          <div class="mega-dropdown-menu">
+                            <ul
+                              class="container mega-dropdown d-flex flex-wrap"
+                            >
+                              <li
+                                class="mega-dropdown-list menu-item-has-children"
+                              >
+                                <h6
+                                  class="heading-6 font-weight-500 mega-title collapsed"
+                                  data-bs-toggle="collapse"
+                                  data-bs-target="#menuVertical6-3"
+                                  aria-controls="menuVertical6-3"
+                                  aria-expanded="false"
+                                  aria-label="Toggle navigation"
+                                >
+                                  New Arrivals
+                                  <i class="mdi mdi-chevron-right"></i>
+                                </h6>
+                                <ul class="collapse" id="menuVertical6-3">
+                                  <li><a href="#0">Dressess</a></li>
+                                  <li><a href="#0">Jackets</a></li>
+                                  <li>
+                                    <a href="#0">Hoodies &amp; Sweatshirts</a>
+                                  </li>
+                                  <li><a href="#0">Sweaters</a></li>
+                                  <li><a href="#0">Tops &amp; Tees</a></li>
+                                  <li><a href="#0">Party Dressess</a></li>
+                                </ul>
+                              </li>
+                              <li
+                                class="mega-dropdown-list menu-item-has-children"
+                              >
+                                <h6
+                                  class="heading-6 font-weight-500 mega-title collapsed"
+                                  data-bs-toggle="collapse"
+                                  data-bs-target="#menuVertical6-4"
+                                  aria-controls="menuVertical6-4"
+                                  aria-expanded="false"
+                                  aria-label="Toggle navigation"
+                                >
+                                  Trending
+                                  <i class="mdi mdi-chevron-right"></i>
+                                </h6>
+                                <ul class="collapse" id="menuVertical6-4">
+                                  <li><a href="#0">Dressess</a></li>
+                                  <li><a href="#0">Jackets</a></li>
+                                  <li>
+                                    <a href="#0">Hoodies &amp; Sweatshirts</a>
+                                  </li>
+                                  <li><a href="#0">Sweaters</a></li>
+                                  <li><a href="#0">Tops &amp; Tees</a></li>
+                                  <li><a href="#0">Party Dressess</a></li>
+                                </ul>
+                              </li>
+                              <li class="mega-dropdown-list">
+                                <div class="d-md-flex d-lg-block">
+                                  <div class="menu-image">
+                                    <img
+                                      src="assets/images/menu-1.jpg"
+                                      alt=""
+                                    />
+                                  </div>
+                                  <div class="menu-image">
+                                    <img
+                                      src="assets/images/menu-2.jpg"
+                                      alt=""
+                                    />
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </li>
+                      </ul>
+                      <!-- sub mega dropdown Ends -->
+                    </li>
+                    <li class="menu-item-has-children">
+                      <a
+                        href="#0"
+                        class="collapsed"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#menuVertical6-5"
+                        aria-controls="menuVertical6-5"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                        >Fashion <i class="mdi mdi-chevron-right"></i
+                      ></a>
+
+                      <!-- sub mega dropdown Start -->
+                      <ul
+                        class="sub-mega-dropdown collapse"
+                        id="menuVertical6-5"
+                      >
+                        <li>
+                          <div class="mega-dropdown-menu">
+                            <ul
+                              class="container mega-dropdown d-flex flex-wrap"
+                            >
+                              <li
+                                class="mega-dropdown-list menu-item-has-children"
+                              >
+                                <h6
+                                  class="heading-6 font-weight-500 mega-title collapsed"
+                                  data-bs-toggle="collapse"
+                                  data-bs-target="#menuVertical6-6"
+                                  aria-controls="menuVertical6-6"
+                                  aria-expanded="false"
+                                  aria-label="Toggle navigation"
+                                >
+                                  New Arrivals
+                                  <i class="mdi mdi-chevron-right"></i>
+                                </h6>
+                                <ul class="collase" id="menuVertical6-6">
+                                  <li><a href="#0">Dressess</a></li>
+                                  <li><a href="#0">Jackets</a></li>
+                                  <li>
+                                    <a href="#0">Hoodies &amp; Sweatshirts</a>
+                                  </li>
+                                  <li><a href="#0">Sweaters</a></li>
+                                  <li><a href="#0">Tops &amp; Tees</a></li>
+                                  <li><a href="#0">Party Dressess</a></li>
+                                </ul>
+                              </li>
+                              <li
+                                class="mega-dropdown-list menu-item-has-children"
+                              >
+                                <h6
+                                  class="heading-6 font-weight-500 mega-title collapsed"
+                                  data-bs-toggle="collapse"
+                                  data-bs-target="#menuVertical6-7"
+                                  aria-controls="menuVertical6-7"
+                                  aria-expanded="false"
+                                  aria-label="Toggle navigation"
+                                >
+                                  Trending
+                                  <i class="mdi mdi-chevron-right"></i>
+                                </h6>
+                                <ul class="collapse" id="menuVertical6-7">
+                                  <li><a href="#0">Dressess</a></li>
+                                  <li><a href="#0">Jackets</a></li>
+                                  <li>
+                                    <a href="#0">Hoodies &amp; Sweatshirts</a>
+                                  </li>
+                                  <li><a href="#0">Sweaters</a></li>
+                                  <li><a href="#0">Tops &amp; Tees</a></li>
+                                  <li><a href="#0">Party Dressess</a></li>
+                                </ul>
+                              </li>
+                              <li class="mega-dropdown-list">
+                                <div class="d-md-flex d-lg-block">
+                                  <div class="menu-image">
+                                    <img
+                                      src="assets/images/menu-1.jpg"
+                                      alt=""
+                                    />
+                                  </div>
+                                  <div class="menu-image">
+                                    <img
+                                      src="assets/images/menu-2.jpg"
+                                      alt=""
+                                    />
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </li>
+                      </ul>
+                      <!-- sub mega dropdown Ends -->
+                    </li>
+                    <li>
+                      <a href="#0"
+                        >Health &amp; Household
+                        <i class="mdi mdi-chevron-right"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#0"
+                        >Bages &amp; Shoes <i class="mdi mdi-chevron-right"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#0"
+                        >Jewelry &amp; Watchs
+                        <i class="mdi mdi-chevron-right"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#0"
+                        >Beauty &amp; Health
+                        <i class="mdi mdi-chevron-right"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#0"
+                        >Electronics <i class="mdi mdi-chevron-right"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#0"
+                        >Home &amp; Garden <i class="mdi mdi-chevron-right"></i
+                      ></a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- navbar menu Ends -->
+
+                <!-- navbar menu Start -->
+                <ul class="main-menu-horizontal d-none d-lg-flex">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                  </li>
+                  <% if (!isAuth) { %>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/signup">signup</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
+                  </li>
+                  <%} else { %>
+                  <li></li>
+                  <% } %>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="/products">Products</a>
+                  </li>
+                  <% if(isAuth){ %>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/checkout">Checkout</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/cart">Cart</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/admin/products"
+                      >Admin Products</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/admin/add-product"
+                      >Add Product</a
+                    >
+                  </li>
+                  <% } %>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/orders">Orders</a>
+                  </li>
+                  <li class="position-static menu-item-has-children">
+                    <a
+                      href="#0"
+                      class="collapsed"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#menuVertical6-8"
+                      aria-controls="menuVertical6-8"
+                      aria-expanded="false"
+                      aria-label="Toggle navigation"
+                      >Womens</a
+                    >
+
+                    <!-- sub mega dropdown Start -->
+                    <ul class="sub-mega-dropdown collapse" id="menuVertical6-8">
+                      <li>
+                        <div class="mega-dropdown-menu">
+                          <ul class="container mega-dropdown d-flex flex-wrap">
+                            <li
+                              class="mega-dropdown-list menu-item-has-children"
+                            >
+                              <h6
+                                class="heading-6 font-weight-500 mega-title collapsed"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#menuVertical6-9"
+                                aria-controls="menuVertical6-9"
+                                aria-expanded="false"
+                                aria-label="Toggle navigation"
+                              >
+                                New Arrivals
+                              </h6>
+                              <ul class="collapse" id="menuVertical6-9">
+                                <li><a href="#0">Dressess</a></li>
+                                <li><a href="#0">Jackets</a></li>
+                                <li>
+                                  <a href="#0">Hoodies &amp; Sweatshirts</a>
+                                </li>
+                                <li><a href="#0">Sweaters</a></li>
+                                <li><a href="#0">Tops &amp; Tees</a></li>
+                                <li><a href="#0">Party Dressess</a></li>
+                              </ul>
+                            </li>
+                            <li
+                              class="mega-dropdown-list menu-item-has-children"
+                            >
+                              <h6
+                                class="heading-6 font-weight-500 mega-title collapsed"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#menuVertical6-10"
+                                aria-controls="menuVertical6-10"
+                                aria-expanded="false"
+                                aria-label="Toggle navigation"
+                              >
+                                Trending
+                              </h6>
+                              <ul class="collapse" id="menuVertical6-10">
+                                <li><a href="#0">Dressess</a></li>
+                                <li><a href="#0">Jackets</a></li>
+                                <li>
+                                  <a href="#0">Hoodies &amp; Sweatshirts</a>
+                                </li>
+                                <li><a href="#0">Sweaters</a></li>
+                                <li><a href="#0">Tops &amp; Tees</a></li>
+                                <li><a href="#0">Party Dressess</a></li>
+                              </ul>
+                            </li>
+                            <li
+                              class="mega-dropdown-list menu-item-has-children"
+                            >
+                              <h6
+                                class="heading-6 font-weight-500 mega-title collapsed"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#menuVertical6-11"
+                                aria-controls="menuVertical6-11"
+                                aria-expanded="false"
+                                aria-label="Toggle navigation"
+                              >
+                                Accessories
+                              </h6>
+                              <ul class="collapse" id="menuVertical6-11">
+                                <li>
+                                  <a href="#0">Hoodies &amp; Sweatshirts</a>
+                                </li>
+                                <li><a href="#0">Jackets &amp; Coats</a></li>
+                                <li><a href="#0">Pants</a></li>
+                                <li><a href="#0">Jeans</a></li>
+                                <li><a href="#0">Tops &amp; Tees</a></li>
+                                <li><a href="#0">Casual Shorts</a></li>
+                              </ul>
+                            </li>
+                            <li class="mega-dropdown-list">
+                              <img
+                                src="assets/images/menu-slider-1.png"
+                                alt=""
+                              />
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+                    <!-- sub mega dropdown Ends -->
+                  </li>
+                  <li class="menu-item-has-children">
+                    <a
+                      href="#0"
+                      class="collapsed"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#menuVertical6-12"
+                      aria-controls="menuVertical6-12"
+                      aria-expanded="false"
+                      aria-label="Toggle navigation"
+                      >More</a
+                    >
+                    <!-- sub menu Start -->
+                    <ul class="sub-menu collapse" id="menuVertical6-12">
+                      <li><a href="#0">Dropped Menu 1</a></li>
+                      <li class="menu-item-has-children">
+                        <a
+                          href="#0"
+                          class="collapsed"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#menuVertical6-13"
+                          aria-controls="menuVertical6-13"
+                          aria-expanded="false"
+                          aria-label="Toggle navigation"
+                          >Dropped Menu 2 <i class="mdi mdi-chevron-right"></i
+                        ></a>
+                        <ul class="sub-menu collapse" id="menuVertical6-13">
+                          <li><a href="#0">Sub Dropped Menu 1</a></li>
+                          <li><a href="#0">Sub Dropped Menu 2</a></li>
+                          <li><a href="#0">Sub Dropped Menu 3</a></li>
+                          <li class="menu-item-has-children">
+                            <a
+                              href="#0"
+                              class="collapsed"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#menuVertical6-14"
+                              aria-controls="menuVertical6-14"
+                              aria-expanded="false"
+                              aria-label="Toggle navigation"
+                              >Sub Dropped Menu 4
+                              <i class="mdi mdi-chevron-right"></i
+                            ></a>
+                            <ul class="sub-menu collapse" id="menuVertical6-14">
+                              <li><a href="#0">Sub Dropped Menu 1</a></li>
+                              <li><a href="#0">Sub Dropped Menu 2</a></li>
+                              <li><a href="#0">Sub Dropped Menu 3</a></li>
+                              <li><a href="#0">Sub Dropped Menu 4</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a href="#0">Dropped Menu 3</a></li>
+                      <li><a href="#0">Dropped Menu 4</a></li>
+                    </ul>
+                    <!-- sub menu Ends -->
+                  </li>
+                </ul>
+                <!-- navbar menu Ends -->
+              </nav>
+              <!-- main navbar Ends -->
             </div>
+          </div>
         </div>
+      </div>
     </header>
+  </body>
+</html>

@@ -1,4 +1,5 @@
 const path = require("path");
+const shopControllers = require("./controllers/shop");
 
 const express = require("express");
 const bodyParser = require("body-parser");

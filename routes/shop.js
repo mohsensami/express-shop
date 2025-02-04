@@ -19,7 +19,7 @@ router.post("/cart", isAuth, shopControllers.postCart);
 
 router.get("/search", shopControllers.search);
 
-router.use(shopControllers.globalDataMiddleware);
+// router.use(shopControllers.globalDataMiddleware);
 
 // router.get('/orders', shopControllers.getOrders);
 

@@ -1,18 +1,19 @@
 <%- include('../includes/header.ejs') %>
     <main>
-        <%- include('../includes/carousel.ejs') %>
+        <section class="product-details-wrapper pt-5 pb-5">
+            <div>
+                <h1 class="text-center">
+                    <%= pageTitle %>
+                </h1>
+            </div>
             <div class="container">
-
-                <div class="row">
+                <div class="col-lg-4 col-sm-6">
                     <% if (productsArray.length> 0) { %>
                         <% for (let product of productsArray) { %>
-
-
-
-                            <div class="col-lg-4 col-sm-6 product-style-4 mt-30">
+                            <div class="product-style-4 mt-30">
                                 <div class="product-image">
                                     <div class="product-item active">
-                                        <img src="/<%= product.image %>" <%=product.title %>>
+                                        <img src="/<%= product.image %>" alt=<%=product.title %>>
                                     </div>
                                     <a class="add-wishlist" href="#0">
                                         <i class="mdi mdi-heart"></i>
@@ -23,7 +24,7 @@
                                             <%= product.title %>
                                         </a></h4>
                                     <p>
-                                        <%= product.description.substring(0,150) + "..." %>
+                                        <%= product.description %>
                                     </p>
                                     <div class="product-price-cart">
                                         <span class="price">$ <%= product.price %></span>
@@ -33,13 +34,13 @@
                                 </div>
                             </div>
 
-
                             <% } %>
                                 <% } else { %>
                                     <p>Not exists</p>
                                     <% } %>
-
+                                        </>
                 </div>
             </div>
+        </section>
     </main>
     <%- include('../includes/footer.ejs') %>
