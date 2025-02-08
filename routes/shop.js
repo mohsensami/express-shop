@@ -21,7 +21,7 @@ router.get("/search", shopControllers.search);
 
 // router.use(shopControllers.globalDataMiddleware);
 
-// router.get('/orders', shopControllers.getOrders);
+router.get("/orders", shopControllers.getOrders);
 
 // router.get('/checkout', shopControllers.getCheckout);
 

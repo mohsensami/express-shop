@@ -107,14 +107,15 @@ exports.globalDataMiddleware = async (req, res, next) => {
     });
 };
 
-// module.exports.getOrders = (req, res) => {
-//     res.render('shop/orders', {
-//         pageTitle: 'Orders',
-//     });
-// };
+module.exports.getOrders = (req, res) => {
+  res.render("shop/orders", {
+    pageTitle: "Orders",
+    isAuth: req.session.isLoggedIn,
+  });
+};
 
-// module.exports.getCheckout = (req, res) => {
-//     res.render('shop/checkout', {
-//         pageTitle: 'Checkout',
-//     });
-// };
+module.exports.getCheckout = (req, res) => {
+  res.render("shop/checkout", {
+    pageTitle: "Checkout",
+  });
+};
