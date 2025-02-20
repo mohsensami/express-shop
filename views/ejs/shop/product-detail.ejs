@@ -1,162 +1,234 @@
 <%- include('../includes/header.ejs') %>
-    <main>
-        <section class="product-details-wrapper pt-70 pb-100">
-            <div class="container">
-                <div class="product-details-style-2">
-                    <div class="product-details-content text-center">
-                        <h2 class="title">
-                            <%= product.title %>
-                        </h2>
-                        <p class="sub-title">
-                            <%= product.description %>
-                        </p>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="product-details-image pt-50">
-                                <div class="product-image">
-                                    <div class="product-image-active tab-content" id="v-pills-tabContent-2">
-                                        <div class="single-image tab-pane fade show active" id="v-pills-6" role="tabpanel" aria-labelledby="v-pills-6-tab">
-                                            <img src="/<%= product.image %>" <%=product.title %>>
-                                        </div>
-                                        <div class="single-image tab-pane fade" id="v-pills-7" role="tabpanel" aria-labelledby="v-pills-7-tab">
-                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/product-2.jpg" <%=product.title %>>
-                                        </div>
-                                        <div class="single-image tab-pane fade" id="v-pills-8" role="tabpanel" aria-labelledby="v-pills-8-tab">
-                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/product-3.jpg" <%=product.title %>>
-                                        </div>
-                                        <div class="single-image tab-pane fade" id="v-pills-9" role="tabpanel" aria-labelledby="v-pills-9-tab">
-                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/product-4.jpg" <%=product.title %>>
-                                        </div>
-                                        <div class="single-image tab-pane fade" id="v-pills-10" role="tabpanel" aria-labelledby="v-pills-10-tab">
-                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/product-5.jpg" <%=product.title %>>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-thumb-image">
-                                    <div class="product-thumb-image-active nav nav-pills" id="v-pills-tab-2" role="tablist" aria-orientation="vertical">
-                                        <div class="single-thumb active" id="v-pills-6-tab" data-bs-toggle="pill" href="#v-pills-6" role="tab" aria-controls="v-pills-6" aria-selected="true">
-                                            <img src="/<%= product.image %>" <%=product.title %>>
-                                        </div>
-                                        <div class="single-thumb" id="v-pills-7-tab" data-bs-toggle="pill" href="#v-pills-7" role="tab" aria-controls="v-pills-7" aria-selected="false">
-                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/thunb-2.jpg" <%=product.title %>>
-                                        </div>
-                                        <div class="single-thumb" id="v-pills-8-tab" data-bs-toggle="pill" href="#v-pills-8" role="tab" aria-controls="v-pills-8" aria-selected="false">
-                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/thunb-3.jpg" <%=product.title %>>
-                                        </div>
-                                        <div class="single-thumb" id="v-pills-9-tab" data-bs-toggle="pill" href="#v-pills-9" role="tab" aria-controls="v-pills-9" aria-selected="false">
-                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/thunb-4.jpg" <%=product.title %>>
-                                        </div>
-                                        <div class="single-thumb" id="v-pills-10-tab" data-bs-toggle="pill" href="#v-pills-10" role="tab" aria-controls="v-pills-10" aria-selected="false">
-                                            <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/thunb-5.jpg" <%=product.title %>>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="product-details-content mt-45">
-                                <div class="product-items flex-wrap">
-                                    <h6 class="item-title">Select Your Oculus:</h6>
-                                    <div class="items-wrapper" id="select-item-2">
-                                        <div class="single-item active">
-                                            <div class="items-image">
-                                                <img src="/<%= product.image %>" alt="product">
-                                            </div>
-                                        </div>
-                                        <div class="single-item">
-                                            <div class="items-image">
-                                                <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/product-items-2.jpg" alt="product">
-                                            </div>
-                                        </div>
-                                        <div class="single-item">
-                                            <div class="items-image">
-                                                <img src="https://demo.ecommercehtml.com/assets/images/product-details-1/product-items-3.jpg" alt="product">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+<body>
+  <!-- Navbar -->
+  <nav
+    class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar"
+  >
+    <div class="container">
+      <!-- Brand -->
+      <a
+        class="navbar-brand waves-effect"
+        href="https://mdbootstrap.com/docs/jquery/"
+        target="_blank"
+      >
+        <strong class="blue-text">MDB</strong>
+      </a>
 
-                                <div class="product-select-wrapper flex-wrap">
-                                    <div class="select-item">
-                                        <h6 class="select-title">
-                                            Select Color: <span>Grey</span>
-                                        </h6>
-                                        <ul class="color-select" id="select-color-2">
-                                            <li class="active" style="background-color: #efefef"></li>
-                                            <li style="background-color: #fae5ec"></li>
-                                            <li style="background-color: #4c4c4c"></li>
-                                        </ul>
-                                    </div>
-                                </div>
+      <!-- Collapse -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-                                <div class="product-select-wrapper flex-wrap">
-                                    <div class="select-item">
-                                        <h6 class="select-title">Memory (GB):</h6>
-                                        <ul class="size-select" id="size-select-1">
-                                            <li class="active">
-                                                <span>32gb</span>
-                                            </li>
-                                            <li>
-                                                <span>64gb</span>
-                                            </li>
-                                            <li>
-                                                <span>128 gb</span>
-                                            </li>
-                                        </ul>
-                                    </div>
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Left -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link waves-effect" href="#"
+              >Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link waves-effect"
+              href="https://mdbootstrap.com/docs/jquery/"
+              target="_blank"
+              >About MDB</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link waves-effect"
+              href="https://mdbootstrap.com/docs/jquery/getting-started/download/"
+              target="_blank"
+              >Free download</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link waves-effect"
+              href="https://mdbootstrap.com/education/bootstrap/"
+              target="_blank"
+              >Free tutorials</a
+            >
+          </li>
+        </ul>
 
-                                    <div class="select-item">
-                                        <h6 class="select-title">Select Quantity:</h6>
+        <!-- Right -->
+        <ul class="navbar-nav nav-flex-icons">
+          <li class="nav-item">
+            <a class="nav-link waves-effect">
+              <span class="badge red z-depth-1 mr-1"> 1 </span>
+              <i class="fas fa-shopping-cart"></i>
+              <span class="clearfix d-none d-sm-inline-block"> Cart </span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              href="https://www.facebook.com/mdbootstrap"
+              class="nav-link waves-effect"
+              target="_blank"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              href="https://twitter.com/MDBootstrap"
+              class="nav-link waves-effect"
+              target="_blank"
+            >
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              href="https://github.com/mdbootstrap/bootstrap-material-design"
+              class="nav-link border border-light rounded waves-effect"
+              target="_blank"
+            >
+              <i class="fab fa-github mr-2"></i>MDB GitHub
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar -->
 
-                                        <div class="select-quantity">
-                                            <button type="button" id="sub" class="sub">
-                                                <i class="mdi mdi-minus"></i>
-                                            </button>
-                                            <input type="text" value="1">
-                                            <button type="button" id="add" class="add">
-                                                <i class="mdi mdi-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
+  <!--Main layout-->
+  <main class="mt-5 pt-4">
+    <div class="container dark-grey-text mt-5">
+      <!--Grid row-->
+      <div class="row wow fadeIn">
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+          <img
+            src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/14.jpg"
+            class="img-fluid"
+            alt=""
+          />
+        </div>
+        <!--Grid column-->
 
-                                <div class="product-select-wrapper">
-                                    <div class="select-item">
-                                        <h6 class="select-title">
-                                            Select Shipping Country: <span>+ $ 30 USD</span>
-                                        </h6>
-                                        <ul class="country-select" id="country-select-1">
-                                            <li class="active">
-                                                <span>Bangladesh</span>
-                                            </li>
-                                            <li>
-                                                <span>India</span>
-                                            </li>
-                                            <li>
-                                                <span>Australia</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="product-price">
-                                    <h6 class="price-title">Price:</h6>
-                                    <p class="sale-price">$ <%= product.price %> USD</p>
-                                    <!-- <p class="regular-price">$ 179 USD</p> -->
-                                </div>
-
-                                <div class="product-btn">
-                                    <%- include('../includes/add-to-cart.ejs', {product: product}) %>
-                                        <!-- <a href="#0" class="main-btn secondary-1-btn"><img src="assets/images/icon-svg/cart-8.svg" <%= product.title %>> Buy
-                                        Now</a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+          <!--Content-->
+          <div class="p-4">
+            <div class="mb-3">
+              <a href="">
+                <span class="badge purple mr-1">Category 2</span>
+              </a>
+              <a href="">
+                <span class="badge blue mr-1">New</span>
+              </a>
+              <a href="">
+                <span class="badge red mr-1">Bestseller</span>
+              </a>
             </div>
-        </section>
-    </main>
-    <%- include('../includes/footer.ejs') %>
+
+            <p class="lead">
+              <span class="mr-1">
+                <del>$200</del>
+              </span>
+              <span>$100</span>
+            </p>
+
+            <p class="lead font-weight-bold">Description</p>
+
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dolor
+              suscipit libero eos atque quia ipsa sint voluptatibus! Beatae sit
+              assumenda asperiores iure at maxime atque repellendus maiores quia
+              sapiente.
+            </p>
+
+            <form class="d-flex justify-content-left">
+              <!-- Default input -->
+              <input
+                type="number"
+                value="1"
+                aria-label="Search"
+                class="form-control"
+                style="width: 100px"
+              />
+              <button class="btn btn-primary btn-md my-0 p" type="submit">
+                Add to cart
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </button>
+            </form>
+          </div>
+          <!--Content-->
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+
+      <hr />
+
+      <!--Grid row-->
+      <div class="row d-flex justify-content-center wow fadeIn">
+        <!--Grid column-->
+        <div class="col-md-6 text-center">
+          <h4 class="my-4 h4">Additional information</h4>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+            suscipit modi sapiente illo soluta odit voluptates, quibusdam
+            officia. Neque quibusdam quas a quis porro? Molestias illo neque eum
+            in laborum.
+          </p>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+
+      <!--Grid row-->
+      <div class="row wow fadeIn">
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-12 mb-4">
+          <img
+            src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/11.jpg"
+            class="img-fluid"
+            alt=""
+          />
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <img
+            src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/12.jpg"
+            class="img-fluid"
+            alt=""
+          />
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <img
+            src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/13.jpg"
+            class="img-fluid"
+            alt=""
+          />
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </div>
+  </main>
+  <!--Main layout-->
+
+  <%- include('../includes/footer.ejs') %>
+
