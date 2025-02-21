@@ -23,6 +23,6 @@ router.get("/search", shopControllers.search);
 
 router.get("/orders", shopControllers.getOrders);
 
-// router.get('/checkout', shopControllers.getCheckout);
+router.get("/checkout", shopControllers.getCheckout);
 
 module.exports = router;
