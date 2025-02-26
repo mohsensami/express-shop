@@ -113,7 +113,11 @@
       <div class="row wow fadeIn">
         <!--Grid column-->
         <div class="col-md-6 mb-4">
-          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg" class="img-fluid" alt="" />
+          <img
+            src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg"
+            class="img-fluid"
+            alt=""
+          />
         </div>
         <!--Grid column-->
 
@@ -153,11 +157,12 @@
                 class="form-control"
                 style="width: 100px"
               />
-              <button class="btn btn-primary btn-md my-0 p" type="submit">
+              <!-- <button class="btn btn-primary btn-md my-0 p" type="submit">
                 Add to cart
                 <i class="fas fa-shopping-cart ml-1"></i>
-              </button>
+              </button> -->
             </form>
+            <%- include('../includes/add-to-cart.ejs', {product: product}) %>
           </div>
           <!--Content-->
         </div>
