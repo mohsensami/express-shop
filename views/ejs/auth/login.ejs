@@ -1,172 +1,159 @@
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    <title>Pages / Login - NiceAdmin Bootstrap Template</title>
-    <meta name="robots" content="noindex, nofollow">
-    <meta content="" name="description">
-    <meta content="" name="keywords">
-
-    <!-- Favicons -->
-    <link href="https://bootstrapmade.com/content/assets/img/favicon.png" rel="icon">
-    <link href="https://bootstrapmade.com/content/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-    <!-- Vendor CSS Files -->
-    <link href="https://bootstrapmade.com/content/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://bootstrapmade.com/content/vendors/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="https://bootstrapmade.com/content/vendors/quill/quill.snow.css" rel="stylesheet">
-    <link href="https://bootstrapmade.com/content/vendors/quill/quill.bubble.css" rel="stylesheet">
-    <link href="https://bootstrapmade.com/content/vendors/remixicon/remixicon.css" rel="stylesheet">
-    <link href="https://bootstrapmade.com/content/vendors/simple-datatables/style.css" rel="stylesheet">
-
-    <!-- Template Main CSS File -->
-    <link href="/css/style.css" rel="stylesheet">
-
-    <!-- =======================================================
-    * Template Name: NiceAdmin
-    * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-    * Updated: Apr 20 2024 with Bootstrap v5.3.3
-    * Author: BootstrapMade.com
-    * License: https://bootstrapmade.com/license/
-    ======================================================== -->
-
-</head>
-
-<body>
-
-    <main>
-        <div class="container">
-
-            <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
-
-                            <div class="d-flex justify-content-center py-4">
-                                <a href="index.html" class="logo d-flex align-items-center w-auto">
-                                    <img src="assets/img/logo.png" alt="">
-                                    <span class="d-none d-lg-block">
-                                        <%= pageTitle %>
-                                    </span>
-                                </a>
-                            </div><!-- End Logo -->
-
-                            <% if (errorMessage) { %>
-                                <div class="
-                                  alert alert-secondary-1-light alert-dismissible
-                                  fade
-                                  show
-                                " role="alert">
-                                    <%= errorMessage %>
-                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                                            <i class="mdi mdi-close"></i>
-                                        </button>
-                                </div>
-
-                                <% } %>
-
-                                    <div class="card mb-3">
-
-                                        <div class="card-body">
-
-                                            <div class="pt-4 pb-2">
-                                                <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
-                                                <p class="text-center small">Enter your username &amp; password to login</p>
-                                            </div>
-
-                                            <!-- <form class="row g-3 needs-validation" novalidate=""> -->
-                                            <form method="POST" action="/login" class="add-product-form">
-
-                                                <div class="col-12">
-                                                    <label for="yourUsername" class="form-label">Email</label>
-                                                    <div class="input-group has-validation">
-                                                        <span class="input-group-text" id="inputGroupPrepend">@</span>
-                                                        <!-- <input type="text" name="username" class="form-control" id="yourUsername" required=""> -->
-                                                        <input class="form-control" type="email" name="email" placeholder="user@email.com">
-                                                        <div class="invalid-feedback">Please enter your username.</div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-12">
-                                                    <label for="yourPassword" class="form-label">Password</label>
-                                                    <input class="form-control" type="password" name="password" placeholder=" Password">
-                                                    <!-- <input type="password" name="password" class="form-control" id="yourPassword" required=""> -->
-                                                    <div class="invalid-feedback">Please enter your password!</div>
-                                                </div>
-
-                                                <div class="col-12">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
-                                                        <label class="form-check-label" for="rememberMe">Remember me</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-12">
-                                                    <button class="btn btn-primary w-100" type="submit">Login</button>
-                                                </div>
-                                                <div class="col-12">
-                                                    <p class="small mb-0">Don't have account? <a href="/signup">Create an account</a></p>
-                                                </div>
-                                            </form>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="credits">
-                                        <!-- All the links in the footer should remain intact. -->
-                                        <!-- You can delete the links only if you purchased the pro version. -->
-                                        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                                        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-                                        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-                                    </div>
-
-                        </div>
-                    </div>
-                </div>
-
-            </section>
-
+<%- include('../includes/header.ejs') %>
+<div class="jumbotron color-grey-light mt-5">
+  <div class="d-flex align-items-center h-100">
+    <div class="container text-center py-5">
+      <h3 class="mb-0">Login</h3>
+    </div>
+  </div>
+</div>
+<main>
+  <section class="vh-100">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+          <img
+            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+            class="img-fluid"
+            alt="Sample image"
+          />
         </div>
-    </main><!-- End #main -->
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+          <form method="POST" action="/login" class="add-product-form">
+            <div
+              class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start"
+            >
+              <p class="lead fw-normal mb-0 me-3">Sign in with</p>
+              <button
+                type="button"
+                data-mdb-button-init
+                data-mdb-ripple-init
+                class="btn btn-primary btn-floating mx-1"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </button>
 
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+              <button
+                type="button"
+                data-mdb-button-init
+                data-mdb-ripple-init
+                class="btn btn-primary btn-floating mx-1"
+              >
+                <i class="fab fa-twitter"></i>
+              </button>
 
-    <!-- Vendor JS Files -->
-    <script src="https://bootstrapmade.com/vendors/apexcharts/apexcharts.min.js"></script>
-    <script src="https://bootstrapmade.com/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="https://bootstrapmade.com/vendors/chart.js/chart.umd.js"></script>
-    <script src="https://bootstrapmade.com/vendors/echarts/echarts.min.js"></script>
-    <script src="https://bootstrapmade.com/vendors/quill/quill.js"></script>
-    <script src="https://bootstrapmade.com/vendors/simple-datatables/simple-datatables.js"></script>
-    <script src="https://bootstrapmade.com/vendors/tinymce/tinymce.min.js"></script>
-    <script src="https://bootstrapmade.com/vendors/php-email-form/validate.js"></script>
+              <button
+                type="button"
+                data-mdb-button-init
+                data-mdb-ripple-init
+                class="btn btn-primary btn-floating mx-1"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </button>
+            </div>
 
-    <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
+            <div class="divider d-flex align-items-center my-4">
+              <p class="text-center fw-bold mx-3 mb-0">Or</p>
+            </div>
 
-    <script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;8f62aa812e39bc04&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;version&quot;:&quot;2024.10.5&quot;,&quot;token&quot;:&quot;68c5ca450bae485a842ff76066d69420&quot;}" crossorigin="anonymous"></script>
+            <!-- Email input -->
+            <div data-mdb-input-init class="form-outline mb-4">
+              <!-- <input
+                type="email"
+                id="form3Example3"
+                class="form-control form-control-lg"
+                placeholder="Enter a valid email address"
+              /> -->
+              <input
+                class="form-control form-control-lg"
+                type="email"
+                name="email"
+                placeholder="user@email.com"
+              />
+              <label class="form-label" for="form3Example3"
+                >Email address</label
+              >
+            </div>
 
+            <!-- Password input -->
+            <div data-mdb-input-init class="form-outline mb-3">
+              <!-- <input
+                type="password"
+                id="form3Example4"
+                class="form-control form-control-lg"
+                placeholder="Enter password"
+              /> -->
+              <input
+                class="form-control form-control-lg"
+                type="password"
+                name="password"
+                placeholder=" Password"
+              />
+              <label class="form-label" for="form3Example4">Password</label>
+            </div>
 
-    <svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;">
-        <defs id="SvgjsDefs1002"></defs>
-        <polyline id="SvgjsPolyline1003" points="0,0"></polyline>
-        <path id="SvgjsPath1004" d="M0 0 "></path>
-    </svg>
-    <div id="veepn-breach-alert"></div>
-    <style>
-        @font-face {
-            font-family: FigtreeVF;
-            src: url(chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/fonts/FigtreeVF.woff2) format("woff2 supports variations"), url(chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/fonts/FigtreeVF.woff2) format("woff2-variations");
-            font-weight: 100 1000;
-            font-display: swap
-        }
-    </style>
-</body>
+            <div class="d-flex justify-content-between align-items-center">
+              <!-- Checkbox -->
+              <div class="form-check mb-0">
+                <input
+                  class="form-check-input me-2"
+                  type="checkbox"
+                  value=""
+                  id="form2Example3"
+                />
+                <label class="form-check-label" for="form2Example3">
+                  Remember me
+                </label>
+              </div>
+              <a href="#!" class="text-body">Forgot password?</a>
+            </div>
 
-</html>
+            <div class="text-center text-lg-start mt-4 pt-2">
+              <!-- <button
+                type="button"
+                data-mdb-button-init
+                data-mdb-ripple-init
+                class="btn btn-primary btn-lg"
+                style="padding-left: 2.5rem; padding-right: 2.5rem"
+              >
+                Login
+              </button> -->
+              <button class="btn btn-primary w-100" type="submit">Login</button>
+              <p class="small fw-bold mt-2 pt-1 mb-0">
+                Don't have an account?
+                <a href="#!" class="link-danger">Register</a>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div
+      class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary"
+    >
+      <!-- Copyright -->
+      <div class="text-white mb-3 mb-md-0">
+        Copyright © 2020. All rights reserved.
+      </div>
+      <!-- Copyright -->
+
+      <!-- Right -->
+      <div>
+        <a href="#!" class="text-white me-4">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#!" class="text-white me-4">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#!" class="text-white me-4">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="#!" class="text-white">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </div>
+  </section>
+</main>
+
+<%- include('../includes/footer.ejs') %>
