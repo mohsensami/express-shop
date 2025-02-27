@@ -2,7 +2,7 @@
 <div class="jumbotron color-grey-light mt-5">
   <div class="d-flex align-items-center h-100">
     <div class="container text-center py-5">
-      <h3 class="mb-0">Login</h3>
+      <h3 class="mb-0"><%= pageTitle %></h3>
     </div>
   </div>
 </div>
@@ -18,6 +18,23 @@
           />
         </div>
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+          <% if (errorMessage) { %>
+          <div
+            class="alert alert-secondary-1-light alert-dismissible fade show"
+            role="alert"
+          >
+            <%= errorMessage %>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="alert"
+              aria-label="Close"
+            >
+              <i class="mdi mdi-close"></i>
+            </button>
+          </div>
+
+          <% } %>
           <form method="POST" action="/login" class="add-product-form">
             <div
               class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start"
