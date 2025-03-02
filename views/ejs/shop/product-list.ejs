@@ -1,44 +1,58 @@
 <%- include('../includes/header.ejs') %>
-    <main>
+<div class="jumbotron color-grey-light mt-5">
+    <div class="d-flex align-items-center h-100">
+      <div class="container text-center py-5">
+        <h3 class="mb-0"><%= pageTitle %></h3>
+      </div>
+    </div>
+  </div>    
+<main>
         <section class="product-details-wrapper pt-5 pb-5">
-            <div>
-                <h1 class="text-center">
-                    <%= pageTitle %>
-                </h1>
-            </div>
             <div class="container">
-                <div class="col-lg-4 col-sm-6">
-                    <% if (productsArray.length> 0) { %>
-                        <% for (let product of productsArray) { %>
-                            <div class="product-style-4 mt-30">
-                                <div class="product-image">
-                                    <div class="product-item active">
-                                        <img src="/<%= product.image %>" alt=<%=product.title %>>
-                                    </div>
-                                    <a class="add-wishlist" href="#0">
-                                        <i class="mdi mdi-heart"></i>
-                                    </a>
+                <div class="row wow fadeIn">
+                    <div class="row wow fadeIn">
+                        <% if (productsArray.length> 0) { %>
+                          <% for (let product of productsArray) { %>
+                            <div class="col-lg-3 col-md-6 mb-4">
+                              <!--Card-->
+                              <div class="card">
+                                <!--Card image-->
+                                <div class="view overlay">
+                                  <a title="<%= product.title %>" href="/products/<%= product._id %>"><img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg" class="card-img-top" alt=<%= product.title %>></a>
+                                  <a title="<%= product.title %>" href="/products/<%= product._id %>">
+                                    <div class="mask rgba-white-slight waves-effect waves-light"></div>
+                                  </a>
                                 </div>
-                                <div class="product-content">
-                                    <h4 class="title"><a href="/products/<%= product._id %>">
-                                            <%= product.title %>
-                                        </a></h4>
-                                    <p>
-                                        <%= product.description %>
-                                    </p>
-                                    <div class="product-price-cart">
-                                        <span class="price">$ <%= product.price %></span>
-                                        <%- include('../includes/add-to-cart.ejs', {product: product}) %>
-
-                                    </div>
+                                <!--Card image-->
+                    
+                                <!--Card content-->
+                                <div class="card-body text-center">
+                                  <!--Category & Title-->
+                                  <a href="" class="grey-text">
+                                    <h5>Shirt</h5>
+                                  </a>
+                                  <h5>
+                                    <strong>
+                                      <a href="" class="dark-grey-text"><%= product.title %>
+                                        <span class="badge badge-pill danger-color">NEW</span>
+                                      </a>
+                                    </strong>
+                                  </h5>
+                    
+                                  <h4 class="font-weight-bold blue-text">
+                                    <strong><%= product.price %> $</strong>
+                                  </h4>
                                 </div>
+                                <!--Card content-->
+                              </div>
+                              <!--Card-->
                             </div>
-
                             <% } %>
                                 <% } else { %>
                                     <p>Not exists</p>
                                     <% } %>
                                         </>
+                      </div>
                 </div>
             </div>
         </section>
