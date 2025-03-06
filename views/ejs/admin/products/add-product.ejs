@@ -1,52 +1,68 @@
 <!-- ======= Header ======= -->
-<%- include('../includes/header.ejs') %>
-    <!-- End Header -->
+<%- include('../../includes/header.ejs') %>
+<!-- End Header -->
 
-    <!-- ======= Sidebar ======= -->
-    <%- include('../includes/sidebar.ejs') %>
-        <!-- End Sidebar-->
+<div class="jumbotron color-grey-light mt-5">
+  <div class="d-flex align-items-center h-100">
+    <div class="container text-center py-5">
+      <h3 class="mb-0"><%= pageTitle %></h3>
+    </div>
+  </div>
+</div>
 
-        <main id="main" class="main">
+<main id="main" class="main">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">General Form Elements</h5>
 
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">General Form Elements</h5>
+      <!-- General Form Elements -->
+      <form
+        method="post"
+        class="add-product-form"
+        enctype="multipart/form-data"
+      >
+        <div class="row mb-3">
+          <label for="inputText" class="col-sm-2 col-form-label">Title</label>
+          <div class="col-sm-10">
+            <input type="text" name="title" class="form-control" />
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="inputNumber" class="col-sm-2 col-form-label">Price</label>
+          <div class="col-sm-10">
+            <input type="text" name="price" class="form-control" />
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="inputText" class="col-sm-2 col-form-label"
+            >Description</label
+          >
+          <div class="col-sm-10">
+            <input type="text" name="description" class="form-control" />
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="inputNumber" class="col-sm-2 col-form-label"
+            >File Upload</label
+          >
+          <div class="col-sm-10">
+            <input
+              class="form-control"
+              type="file"
+              name="image"
+              id="formFile"
+            />
+          </div>
+        </div>
 
-                    <!-- General Form Elements -->
-                    <form method="post" class="add-product-form" enctype="multipart/form-data">
-                        <div class="row mb-3">
-                            <label for="inputText" class="col-sm-2 col-form-label">Title</label>
-                            <div class="col-sm-10">
-                                <input type="text" name="title" class="form-control">
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="inputNumber" class="col-sm-2 col-form-label">Price</label>
-                            <div class="col-sm-10">
-                                <input type="text" name="price" class="form-control">
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="inputText" class="col-sm-2 col-form-label">Description</label>
-                            <div class="col-sm-10">
-                                <input type="text" name="description" class="form-control">
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="inputNumber" class="col-sm-2 col-form-label">File Upload</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" type="file" name="image" id="formFile">
-                            </div>
-                        </div>
+        <button class="btn btn-primary" type="submit">Add Product</button>
+      </form>
+      <!-- End General Form Elements -->
+    </div>
+  </div>
+</main>
+<!-- End #main -->
 
-                        <button class="btn btn-primary" type="submit">Add Product</button>
-                    </form><!-- End General Form Elements -->
-
-                </div>
-            </div>
-
-        </main><!-- End #main -->
-
-        <!-- ======= Footer ======= -->
-        <%- include('../includes/footer.ejs') %>
-            <!-- End Footer -->
+<!-- ======= Footer ======= -->
+<%- include('../../includes/footer.ejs') %>
+<!-- End Footer -->
