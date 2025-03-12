@@ -71,6 +71,24 @@ app.use((req, res, next) => {
     .catch((err) => console.log(err));
 });
 
+// Add global cart data middleware
+app.use((req, res, next) => {
+  if (!req.user) {
+    res.locals.cartItemCount = 0;
+    return next();
+  }
+  req.user
+    .populate("cart.items.productId")
+    .then((user) => {
+      res.locals.cartItemCount = user.cart.items.length;
+      next();
+    })
+    .catch((err) => {
+      console.log(err);
+      next();
+    });
+});
+
 app.use("/admin", adminRoutes);
 app.use(shopRoutes);
 app.use(authRoutes);
