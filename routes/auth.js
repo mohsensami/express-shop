@@ -1,18 +1,20 @@
 const express = require("express");
 const { check } = require("express-validator");
+const { isNotAuth } = require("../middleware/is-auth");
 
 const authControllers = require("../controllers/auth");
 
 const router = express.Router();
 
-router.get("/login", authControllers.getLogin);
+router.get("/login", isNotAuth, authControllers.getLogin);
 
-router.post("/login", authControllers.postLogin);
+router.post("/login", isNotAuth, authControllers.postLogin);
 
-router.get("/register", authControllers.getSingup);
+router.get("/register", isNotAuth, authControllers.getSingup);
 
 router.post(
   "/signup",
+  isNotAuth,
   check("email")
     .isEmail()
     .withMessage("آدرس ایمیل اشتباه است")

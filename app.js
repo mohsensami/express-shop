@@ -50,10 +50,15 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/images", express.static(path.join(__dirname, "images")));
 app.use(
   session({
-    secret: "secret key",
+    secret: process.env.SESSION_SECRET || "my-super-secret-key",
     resave: false,
     saveUninitialized: false,
     store: store,
+    cookie: {
+      secure: process.env.NODE_ENV === "production",
+      httpOnly: true,
+      maxAge: 1000 * 60 * 60 * 24, // 24 hours
+    },
   })
 );
 
