@@ -29,7 +29,7 @@ app.set("views", "views/ejs");
 
 const fileStorage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "images");
+    cb(null, "uploads/");
   },
   filename: (req, file, cb) => {
     cb(null, new Date().toISOString() + "-" + file.originalname);
@@ -47,7 +47,7 @@ const fileFilter = (req, file, cb) => {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(multer({ storage: fileStorage }).single("image"));
 app.use(express.static(path.join(__dirname, "public")));
-app.use("/images", express.static(path.join(__dirname, "images")));
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(
   session({
     secret: process.env.SESSION_SECRET || "my-super-secret-key",
