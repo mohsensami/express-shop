@@ -56,26 +56,3 @@ A simple web application built with **Express.js**, **EJS**, **MongoDB**, **bcry
     ```
 
     The app should now be running on: [http://localhost:3000](http://localhost:3000)
-
-## Folder Structure
-
-your-repo-name/
-│
-├── models/ # Mongoose models
-├── public/ # Static files (CSS, images, JS)
-├── routes/ # Express routes
-├── uploads/ # Uploaded files (handled by multer)
-├── views/ # EJS templates
-├── .env # Environment variables
-├── .gitignore
-├── app.js / server.js # Main application file
-├── package.json
-└── README.md
-
-csharp
-Copy
-Edit
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
