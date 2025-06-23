@@ -1,4 +1,4 @@
-# My Express.js App
+# Express Shop
 
 A simple web application built with **Express.js**, **EJS**, **MongoDB**, **bcryptjs**, and **multer**.
 
